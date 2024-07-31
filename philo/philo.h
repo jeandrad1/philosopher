@@ -9,14 +9,16 @@
 // Philosopher structure
 typedef struct s_philo
 {
-    int				id;
-    int				left_fork;
-    int				right_fork;
-    int				eat_count;
-    long long		last_eat;
-    bool            is_dead;
-    pthread_t		thread; 
+    unsigned int				id;
+    unsigned int				left_fork;
+    unsigned int				right_fork;
+    unsigned int				eat_count;
+    long long	              	last_eat;
+    bool                        is_dead;
+    pthread_t	               	thread;
+    t_philo                    *data;
 }					t_philo;
+
 
 // Error exit function
 void   error_exit(char *str);
