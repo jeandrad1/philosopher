@@ -1,0 +1,62 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/07/27 13:23:39 by jeandrad          #+#    #+#              #
+#    Updated: 2024/07/31 15:24:51 by jeandrad         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+# Name: pipex
+NAME = philo
+
+# Compiler
+CC = clang
+
+# Compiler flags
+FLAGS = -Wall -Werror -Wextra 
+
+# Source files for mandatory
+FILES =	philo
+
+# Source directory
+SRCS_DIR = 
+
+# Object directory
+OBJ_DIR = 
+
+# Source files prepended with directory and appended with .c
+SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
+
+# Object files prepended with directory and appended with .o
+OBJS = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(FILES)))
+
+# Compile rule
+$(OBJ_DIR)%.o: $(SRCS_DIR)%.c
+	@$(CC) $(FLAGS) -c $< -o $@
+
+# Build rule for mandatory
+$(NAME): $(OBJS)
+	@$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+	@echo "PHILO created"
+
+# Build rule for mandatory
+all: $(NAME)
+
+# Clean rule
+clean: 
+	@rm -f $(OBJS)
+	@echo "ALL clean"
+
+# Fclean rule
+fclean: clean
+	@rm -f $(NAME)
+	@echo "ALL fclean"
+
+# Re rule
+re: fclean all
+
+.PHONY = all clean fclean re libft
