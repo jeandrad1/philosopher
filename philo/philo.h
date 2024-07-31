@@ -3,6 +3,8 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
+# include <stdint.h>
+# include <sys/time.h>
 
 // Philosopher structure
 typedef struct s_philo
@@ -12,9 +14,8 @@ typedef struct s_philo
     int				right_fork;
     int				eat_count;
     long long		last_eat;
-    bool            dead;
+    bool            is_dead;
     pthread_t		thread; 
-    struct s_data	*data;
 }					t_philo;
 
 // Error exit function
