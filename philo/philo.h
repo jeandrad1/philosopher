@@ -6,6 +6,23 @@
 # include <stdint.h>
 # include <sys/time.h>
 
+#define ERROR_ARG 1
+
+// Table structure
+typedef struct table
+{
+    unsigned int				philo_count;
+    unsigned int				time_to_die;
+    unsigned int				time_to_eat;
+    unsigned int				time_to_sleep;
+    unsigned int				eat_count;
+    bool                        is_dead;
+    pthread_mutex_t				*forks;
+    pthread_mutex_t				print;
+    pthread_mutex_t				dead;
+    pthread_mutex_t				eat;
+}					t_table;
+
 // Philosopher structure
 typedef struct s_philo
 {
@@ -16,12 +33,7 @@ typedef struct s_philo
     long long	              	last_eat;
     bool                        is_dead;
     pthread_t	               	thread;
-    t_philo                    *data;
 }					t_philo;
 
-
-// Error exit function
-void   error_exit(char *str);
-
 // First parser function
-void    parse(int argc, char **argv);
+bool    parse(int argc, char **argv);
