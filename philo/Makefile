@@ -6,7 +6,7 @@
 #    By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/27 13:23:39 by jeandrad          #+#    #+#              #
-#    Updated: 2024/07/31 15:34:55 by jeandrad         ###   ########.fr        #
+#    Updated: 2024/07/31 19:10:03 by jeandrad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,7 @@ FLAGS = -Wall -Werror -Wextra
 
 # Source files for mandatory
 FILES =	philo\
-		parser\
-		error_exit\
+		parser_init_table\
 
 # Source directory
 SRCS_DIR = 

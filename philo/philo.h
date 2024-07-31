@@ -37,3 +37,7 @@ typedef struct s_philo
 
 // First parser function
 bool    parse(int argc, char **argv);
+
+// Initialize table function
+bool init_table(t_table *table, int argc, char **argv);
+
