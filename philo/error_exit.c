@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philo.c                                            :+:      :+:    :+:   */
+/*   error_exit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/31 15:16:01 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/07/31 15:38:19 by jeandrad         ###   ########.fr       */
+/*   Created: 2024/07/31 15:33:39 by jeandrad          #+#    #+#             */
+/*   Updated: 2024/07/31 15:34:07 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-//Main function
-int	main(int argc, char *argv[])
+void   error_exit(char *str)
 {
-	//Check if the number of arguments is correct
-	//Pass to parse function
-	(void) argv;
-	parse(argc, argv);	
-	
-	return (0);
+    printf("%s\n", str);
+    exit(EXIT_FAILURE);
 }

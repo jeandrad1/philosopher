@@ -6,7 +6,7 @@
 #    By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/27 13:23:39 by jeandrad          #+#    #+#              #
-#    Updated: 2024/07/31 15:24:51 by jeandrad         ###   ########.fr        #
+#    Updated: 2024/07/31 15:34:55 by jeandrad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,9 @@ CC = clang
 FLAGS = -Wall -Werror -Wextra 
 
 # Source files for mandatory
-FILES =	philo
+FILES =	philo\
+		parser\
+		error_exit\
 
 # Source directory
 SRCS_DIR = 
