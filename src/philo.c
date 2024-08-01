@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 15:16:01 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/01 11:27:51 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/01 12:30:07 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ int	main(int argc, char *argv[])
 		return (EXIT_FAILURE);
 	
 	//Take out
-	int i = 1;
-	while (i <= table.philo_count)
+	int i = 0;
+	while (i < table.philo_count)
 	{
 		printf("\nphilo_id: %d\n", philo[i].id);
 		printf("left_fork: %d\n", philo[i].left_fork);
@@ -51,5 +51,8 @@ int	main(int argc, char *argv[])
 	}
 	//Stop here
 
+	//Free memory
+	free(philo);
+	
 	return (EXIT_SUCCESS);
 }
