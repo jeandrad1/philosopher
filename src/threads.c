@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 14:33:08 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/01 18:30:56 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/01 19:49:23 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 static bool create_thread (t_philo *philo)
 {
     printf("Philo id: %d\n", philo->id);
-    if (pthread_create(&philo->thread, NULL, &think, &philo) != 0)
+    if (pthread_create(&philo->thread, NULL, &think, philo) != 0)
         return (FAILURE);
+    printf("Philo id after thinking: %d\n", philo->id);
     return (SUCCESS);
 }
 
