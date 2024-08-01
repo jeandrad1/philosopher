@@ -12,33 +12,36 @@
 // Table structure
 typedef struct table
 {
-    unsigned int				philo_count;
-    unsigned int				time_to_die;
-    unsigned int				time_to_eat;
-    unsigned int				time_to_sleep;
-    unsigned int				eat_count;
+    int				philo_count;
+    int				time_to_die;
+    int				time_to_eat;
+    int				time_to_sleep;
+    int				eat_count;
     bool                        is_dead;
     pthread_mutex_t				*forks;
     pthread_mutex_t				print;
     pthread_mutex_t				dead;
     pthread_mutex_t				eat;
+    pthread_t                   control;
 }					t_table;
 
 // Philosopher structure
 typedef struct s_philo
 {
-    unsigned int				id;
-    unsigned int				left_fork;
-    unsigned int				right_fork;
-    unsigned int				eat_count;
+    int				            id;
+    int				            left_fork;
+    int				            right_fork;
+    int				            eat_count;
     long long	              	last_eat;
     bool                        is_dead;
     pthread_t	               	thread;
-}					t_philo;
+}	                t_philo;
 
 // First parser function
 bool    parse(int argc, char **argv);
 
 // Initialize table function
-bool init_table(t_table *table, int argc, char **argv);
+bool    init_table(t_table *table, int argc, char **argv);
 
+// Initialize all philosophers function
+bool    init_all_philo(t_philo *philo, t_table *table);

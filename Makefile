@@ -6,7 +6,7 @@
 #    By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/27 13:23:39 by jeandrad          #+#    #+#              #
-#    Updated: 2024/08/01 10:01:45 by jeandrad         ###   ########.fr        #
+#    Updated: 2024/08/01 10:57:21 by jeandrad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,11 +17,12 @@ NAME = philo
 CC = clang
 
 # Compiler flags
-FLAGS = -Wall -Werror -Wextra -Iinclude
+FLAGS = -Wall -Werror -Wextra -Iinclude -g
 
 # Source files for mandatory
 FILES =	philo\
 		parser_init_table\
+		init_philo\
 
 # Source directory
 SRCS_DIR = ./src/
