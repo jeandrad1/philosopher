@@ -1,4 +1,4 @@
-philo/philo
 *.o
 *.a
 .vscode/settings.json
+philo
