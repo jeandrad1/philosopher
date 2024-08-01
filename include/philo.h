@@ -29,12 +29,13 @@ typedef struct table
 typedef struct s_philo
 {
     int				            id;
-    int				            left_fork;
-    int				            right_fork;
+    pthread_mutex_t			    left_fork;
+    pthread_mutex_t	            right_fork;
     int				            eat_count;
     long long	              	last_eat;
     bool                        is_dead;
     pthread_t	               	thread;
+
 }	                t_philo;
 
 // First parser function

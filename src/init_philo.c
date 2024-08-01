@@ -6,18 +6,21 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 10:24:48 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/01 12:25:44 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/01 13:02:13 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
 // Function to initialize the philosopher
-static bool init_philo (t_philo *philo, int i)
+static bool init_philo (t_philo *philo, t_table *table, int i)
 {
     philo->id = i + 1;
-    philo->left_fork = philo->id;
-    philo->right_fork = i;
+    if (philo->id != 1)
+        philo->right_fork = table->forks[i - 1];
+    else
+        philo->right_fork = table->forks[table->philo_count];
+    philo->left_fork = table->forks[i];
     philo->eat_count = 0;
     philo->last_eat = 0;
     philo->is_dead = false;
@@ -37,11 +40,10 @@ bool init_all_philo(t_philo *philo, t_table *table)
     printf("philo_count: %d\n", philo_count);
     while (i < philo_count)
     {
-        if(!init_philo(&philo[i], i))
+        if(!init_philo(&philo[i], table, i))
             return (FAILURE);
         i++;
     }
-    philo[0].right_fork = philo_count;
     printf("Init all philo ends\n");
     return (SUCCESS);
 }
