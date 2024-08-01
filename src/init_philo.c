@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 10:24:48 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/01 15:57:04 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/01 18:25:01 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ static bool init_philo (t_philo *philo, t_table *table, int i)
     philo->left_fork = &table->forks[i];
     philo->eat_count = 0;
     philo->last_eat = 0;
-    philo->is_dead = false;
-    philo->thread = i + 1;
     philo->table = table;
     return (SUCCESS);
 }

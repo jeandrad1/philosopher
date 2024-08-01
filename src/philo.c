@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 15:16:01 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/01 15:20:26 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/01 18:21:48 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ int	main(int argc, char *argv[])
 		printf("right_fork: %p\n", (void *) &philo[i].right_fork);
 		printf("eat_count: %d\n", philo[i].eat_count);
 		printf("last_eat: %lld\n", philo[i].last_eat);
-		printf("is_dead: %d\n\n", philo[i].is_dead);
 		i++;
 	}
 	//Stop here
@@ -58,7 +57,7 @@ int	main(int argc, char *argv[])
 
 	// Philosophers try to eat like normal people
 	printf("Philosophers are thinking\n");
-	if (!dinner(philo, &table))
+	if (!dinner(philo))
 		return (EXIT_FAILURE);
 		
 	//Free memory

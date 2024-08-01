@@ -12,15 +12,14 @@
 // Table structure
 typedef struct table
 {
-    int				philo_count;
-    int				time_to_die;
-    int				time_to_eat;
-    int				time_to_sleep;
-    int				eat_count;
-    bool                        is_dead;
+    int				    philo_count;
+    int				    time_to_die;
+    int				    time_to_eat;
+    int				    time_to_sleep;
+    int				    eat_count;
+    pthread_mutex_t             is_dead;    
     pthread_mutex_t				*forks;
     pthread_mutex_t				print;
-    pthread_mutex_t				dead;
     pthread_mutex_t				eat;
     pthread_t                   control;
 }					t_table;
@@ -33,7 +32,6 @@ typedef struct s_philo
     pthread_mutex_t	            *right_fork;
     int				            eat_count;
     long long	              	last_eat;
-    bool                        is_dead;
     pthread_t	               	thread;
     t_table	                    *table;
 
@@ -55,4 +53,4 @@ bool    create_philo_threads(t_philo *philo, t_table *table);
 void *think (void *philosopher);
 
 //Main process of the dinner
-bool dinner(t_philo *philo, t_table *table);
+bool dinner(t_philo *philo);
