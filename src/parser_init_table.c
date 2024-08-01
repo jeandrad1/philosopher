@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 15:29:57 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/01 14:19:33 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/01 14:26:45 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ bool    parse(int argc, char **argv)
     return (SUCCESS);
 }
 
-void	ft_mutex_create(t_table *table)
+bool	ft_mutex_create(t_table *table)
 {
 	int i;
 
@@ -66,9 +66,28 @@ void	ft_mutex_create(t_table *table)
 	{
 		if (pthread_mutex_init(&table->forks[i], NULL) != 0)
 			printf("Error creating forks\n");
-		
+		if (pthread_mutex_init(&table->print, NULL) != 0)
+		{
+			pthread_mutex_destroy(&table->forks[i]);
+			printf("Error creating print\n");
+			return (FAILURE);
+		}
+		if (pthread_mutex_init(&table->dead, NULL) != 0)
+		{
+			pthread_mutex_destroy(&table->forks[i]);
+			pthread_mutex_destroy(&table->print);
+			printf("Error creating dead\n");
+		}
+		if (pthread_mutex_init(&table->eat, NULL) != 0)
+		{
+			pthread_mutex_destroy(&table->forks[i]);
+			pthread_mutex_destroy(&table->print);
+			pthread_mutex_destroy(&table->dead);
+			printf("Error creating eat\n");
+		}
 		i++;
 	}
+	return (SUCCESS);
 }
 
 bool init_table(t_table *table, int argc, char **argv)
