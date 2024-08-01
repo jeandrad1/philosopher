@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 10:24:48 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/01 13:02:13 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/01 14:13:55 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ static bool init_philo (t_philo *philo, t_table *table, int i)
 {
     philo->id = i + 1;
     if (philo->id != 1)
-        philo->right_fork = table->forks[i - 1];
+        philo->right_fork = &table->forks[i - 1];
     else
-        philo->right_fork = table->forks[table->philo_count];
-    philo->left_fork = table->forks[i];
+        philo->right_fork = &table->forks[table->philo_count];
+    philo->left_fork = &table->forks[i];
     philo->eat_count = 0;
     philo->last_eat = 0;
     philo->is_dead = false;

@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 15:29:57 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/01 12:53:09 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/01 14:19:33 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ bool    parse(int argc, char **argv)
     return (SUCCESS);
 }
 
-void	ft_forks_create(t_table *table)
+void	ft_mutex_create(t_table *table)
 {
 	int i;
 
@@ -64,7 +64,9 @@ void	ft_forks_create(t_table *table)
 	table->forks = malloc(sizeof(pthread_mutex_t) * table->philo_count);
 	while (i < table->philo_count)
 	{
-		pthread_mutex_init(&table->forks[i], NULL);
+		if (pthread_mutex_init(&table->forks[i], NULL) != 0)
+			printf("Error creating forks\n");
+		
 		i++;
 	}
 }
@@ -79,7 +81,7 @@ bool init_table(t_table *table, int argc, char **argv)
 	table->eat_count = 0;
 	if (argc == 6)
 		table->eat_count = ft_atoi(argv[5]);
-	ft_forks_create(table);
+	ft_mutex_create(table);
 	table->is_dead = false;
 	printf("Table initialized\n");
 	return (SUCCESS);

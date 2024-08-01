@@ -29,8 +29,8 @@ typedef struct table
 typedef struct s_philo
 {
     int				            id;
-    pthread_mutex_t			    left_fork;
-    pthread_mutex_t	            right_fork;
+    pthread_mutex_t			    *left_fork;
+    pthread_mutex_t	            *right_fork;
     int				            eat_count;
     long long	              	last_eat;
     bool                        is_dead;
