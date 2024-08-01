@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 15:29:57 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/01 14:26:45 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/01 14:31:39 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ bool	ft_mutex_create(t_table *table)
 			pthread_mutex_destroy(&table->forks[i]);
 			pthread_mutex_destroy(&table->print);
 			printf("Error creating dead\n");
+			return (FAILURE);
 		}
 		if (pthread_mutex_init(&table->eat, NULL) != 0)
 		{
@@ -84,6 +85,7 @@ bool	ft_mutex_create(t_table *table)
 			pthread_mutex_destroy(&table->print);
 			pthread_mutex_destroy(&table->dead);
 			printf("Error creating eat\n");
+			return (FAILURE);
 		}
 		i++;
 	}
@@ -100,7 +102,8 @@ bool init_table(t_table *table, int argc, char **argv)
 	table->eat_count = 0;
 	if (argc == 6)
 		table->eat_count = ft_atoi(argv[5]);
-	ft_mutex_create(table);
+	if (!ft_mutex_create(table))
+		return (FAILURE);
 	table->is_dead = false;
 	printf("Table initialized\n");
 	return (SUCCESS);
