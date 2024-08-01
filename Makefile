@@ -6,7 +6,7 @@
 #    By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/27 13:23:39 by jeandrad          #+#    #+#              #
-#    Updated: 2024/08/01 10:57:21 by jeandrad         ###   ########.fr        #
+#    Updated: 2024/08/01 14:58:18 by jeandrad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,9 @@ FLAGS = -Wall -Werror -Wextra -Iinclude -g
 FILES =	philo\
 		parser_init_table\
 		init_philo\
+		threads\
+		actions\
+		dinner\
 
 # Source directory
 SRCS_DIR = ./src/

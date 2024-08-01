@@ -35,6 +35,7 @@ typedef struct s_philo
     long long	              	last_eat;
     bool                        is_dead;
     pthread_t	               	thread;
+    t_table	                    *table;
 
 }	                t_philo;
 
@@ -46,3 +47,12 @@ bool    init_table(t_table *table, int argc, char **argv);
 
 // Initialize all philosophers function
 bool    init_all_philo(t_philo *philo, t_table *table);
+
+// Init the threads
+bool    create_philo_threads(t_philo *philo, t_table *table);
+
+// Actions
+void *think (void *philosopher);
+
+//Main process of the dinner
+bool dinner(t_philo *philo, t_table *table);

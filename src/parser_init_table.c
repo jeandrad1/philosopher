@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 15:29:57 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/01 14:31:39 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/01 15:27:10 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,38 +56,42 @@ bool    parse(int argc, char **argv)
     return (SUCCESS);
 }
 
-bool	ft_mutex_create(t_table *table)
+static bool	ft_mutex_create(t_table *table)
 {
 	int i;
 
 	i = 0;
 	table->forks = malloc(sizeof(pthread_mutex_t) * table->philo_count);
+	if(!table->forks)
+	{
+		printf("Error creating forks\n");
+		return (FAILURE);
+	}
+	
 	while (i < table->philo_count)
 	{
 		if (pthread_mutex_init(&table->forks[i], NULL) != 0)
 			printf("Error creating forks\n");
-		if (pthread_mutex_init(&table->print, NULL) != 0)
-		{
-			pthread_mutex_destroy(&table->forks[i]);
-			printf("Error creating print\n");
-			return (FAILURE);
-		}
-		if (pthread_mutex_init(&table->dead, NULL) != 0)
-		{
-			pthread_mutex_destroy(&table->forks[i]);
-			pthread_mutex_destroy(&table->print);
-			printf("Error creating dead\n");
-			return (FAILURE);
-		}
-		if (pthread_mutex_init(&table->eat, NULL) != 0)
-		{
-			pthread_mutex_destroy(&table->forks[i]);
+		i++;
+	}
+	
+	if (pthread_mutex_init(&table->print, NULL) != 0)
+	{
+		printf("Error creating print\n");
+		return (FAILURE);
+	}
+	if (pthread_mutex_init(&table->dead, NULL) != 0)
+	{
+		pthread_mutex_destroy(&table->print);
+		printf("Error creating dead\n");
+		return (FAILURE);
+	}
+	if (pthread_mutex_init(&table->eat, NULL) != 0)
+	{
 			pthread_mutex_destroy(&table->print);
 			pthread_mutex_destroy(&table->dead);
 			printf("Error creating eat\n");
 			return (FAILURE);
-		}
-		i++;
 	}
 	return (SUCCESS);
 }

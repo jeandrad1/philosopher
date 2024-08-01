@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 15:16:01 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/01 13:05:07 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/01 15:20:26 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,16 @@ int	main(int argc, char *argv[])
 	}
 	//Stop here
 
+	// Threads creation
+	printf("Creating threads of the philosophers\n");
+	if (!create_philo_threads(philo, &table))
+		return (EXIT_FAILURE);
+
+	// Philosophers try to eat like normal people
+	printf("Philosophers are thinking\n");
+	if (!dinner(philo, &table))
+		return (EXIT_FAILURE);
+		
 	//Free memory
 	free(philo);
 	
