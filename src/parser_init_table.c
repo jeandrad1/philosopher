@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 15:29:57 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/07/31 19:21:10 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/07/31 19:25:04 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,24 +36,24 @@ bool    parse(int argc, char **argv)
     i = 1;
     j = 0;
     if (argc < 5 || argc > 6)
-        return(ERROR_ARG);
+        return(FAILURE);
     
     while (i < argc)
     {
 		str = argv[i];
 		j = 0;
 		if (str[0] == '\0')
-			return(ERROR_ARG);
+			return(FAILURE);
         while(str[j])
         {
             if (str[j] < '0' || str[j] > '9' || str[0] == '0')
-                return(ERROR_ARG);
+                return(FAILURE);
             j++;
         }
         i++;
     }
 	printf("All arguments are numbers\n");
-    return (EXIT_SUCCESS);
+    return (SUCCESS);
 }
 
 bool init_table(t_table *table, int argc, char **argv)
@@ -68,5 +68,5 @@ bool init_table(t_table *table, int argc, char **argv)
 		table->eat_count = ft_atoi(argv[5]);
 	table->is_dead = false;
 	printf("Table initialized\n");
-	return (EXIT_SUCCESS);
+	return (SUCCESS);
 }

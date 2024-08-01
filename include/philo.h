@@ -6,7 +6,8 @@
 # include <stdint.h>
 # include <sys/time.h>
 
-#define ERROR_ARG 1
+#define SUCCESS 1
+#define FAILURE 0
 
 // Table structure
 typedef struct table

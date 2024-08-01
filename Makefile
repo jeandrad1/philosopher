@@ -6,7 +6,7 @@
 #    By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/27 13:23:39 by jeandrad          #+#    #+#              #
-#    Updated: 2024/07/31 19:10:03 by jeandrad         ###   ########.fr        #
+#    Updated: 2024/08/01 10:01:45 by jeandrad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,17 +17,17 @@ NAME = philo
 CC = clang
 
 # Compiler flags
-FLAGS = -Wall -Werror -Wextra 
+FLAGS = -Wall -Werror -Wextra -Iinclude
 
 # Source files for mandatory
 FILES =	philo\
 		parser_init_table\
 
 # Source directory
-SRCS_DIR = 
+SRCS_DIR = ./src/
 
 # Object directory
-OBJ_DIR = 
+OBJ_DIR = ./src/
 
 # Source files prepended with directory and appended with .c
 SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
