@@ -12,11 +12,12 @@
 // Table structure
 typedef struct table
 {
-    int				    philo_count;
-    int				    time_to_die;
-    int				    time_to_eat;
-    int				    time_to_sleep;
-    int				    eat_count;
+    int				            philo_count;
+    int				            time_to_die;
+    int				            time_to_eat;
+    int				            time_to_sleep;
+    int				            eat_count;
+    long            			start_time;
     pthread_mutex_t             is_dead;    
     pthread_mutex_t				*forks;
     pthread_mutex_t				print;

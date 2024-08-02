@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 14:33:08 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/02 11:29:08 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/02 14:22:48 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ static void *philosopher_actions(void *arg)
 
 static bool create_thread (t_philo *philo)
 {
+
+    philo->table->start_time = time_milliseconds();
     if (pthread_create(&philo->thread, NULL, &philosopher_actions, philo) != 0)
         return (FAILURE);
     return (SUCCESS);
