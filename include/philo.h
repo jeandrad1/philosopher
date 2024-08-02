@@ -54,7 +54,7 @@ bool    create_philo_threads(t_philo *philo, t_table *table);
 void *philo_think (void *philosopher);
 void *philo_eat(void *philosopher);
 void *philo_sleep(void *philosopher);
-
+void *philo_takes_fork(void *philosopher);
 
 // Dinner ends
 bool dinner_ends(t_philo *philo);

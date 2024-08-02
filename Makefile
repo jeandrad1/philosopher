@@ -6,7 +6,7 @@
 #    By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/27 13:23:39 by jeandrad          #+#    #+#              #
-#    Updated: 2024/08/02 11:12:34 by jeandrad         ###   ########.fr        #
+#    Updated: 2024/08/02 15:00:47 by jeandrad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ NAME = philo
 CC = clang
 
 # Compiler flags
-FLAGS = -Wall -Werror -Wextra -Iinclude -g -pthread
+FLAGS = -Wall -Werror -Wextra -Iinclude -g -pthread #-fsanitize
 
 # Source files for mandatory
 FILES =	philo\
