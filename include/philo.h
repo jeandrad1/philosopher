@@ -50,8 +50,10 @@ bool    init_all_philo(t_philo *philo, t_table *table);
 bool    create_philo_threads(t_philo *philo, t_table *table);
 
 // Actions
-void *think (void *philosopher);
-void *eat(void *philosopher);
+void *philo_think (void *philosopher);
+void *philo_eat(void *philosopher);
+void *philo_sleep(void *philosopher);
+
 
 // Dinner ends
 bool dinner_ends(t_philo *philo);
