@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 14:35:09 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/02 15:04:15 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/02 16:08:48 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void *philo_think (void *philosopher)
     pthread_mutex_lock(&philo->table->print);
     printf("\n %ld Philosopher %d is thinking\n", time,philo->id);
     pthread_mutex_unlock(&philo->table->print);
-    usleep(1);
+    better_sleep(10);
     return NULL;
 }
 
@@ -37,7 +37,7 @@ void *philo_eat(void *philosopher)
     printf("\n%ld Philosopher %d is eating\n", time ,philo->id);
     pthread_mutex_unlock(&philo->table->print);
     philo->last_eat = time_milliseconds();
-    usleep(1);
+    better_sleep(10);
     return NULL;
 }
 
@@ -51,7 +51,7 @@ void *philo_sleep(void *philosopher)
     pthread_mutex_lock(&philo->table->print);
     printf("\n%ld Philosopher %d is sleeping\n", time, philo->id);
     pthread_mutex_unlock(&philo->table->print);
-    usleep(1);
+    better_sleep(10);
     return NULL;
 }
 
@@ -65,6 +65,6 @@ void *philo_takes_fork(void *philosopher)
     pthread_mutex_lock(&philo->table->print);
     printf("\n%ld Philosopher %d has taken a fork\n", time, philo->id);
     pthread_mutex_unlock(&philo->table->print);
-    usleep(1);
+    better_sleep(10);
     return NULL;
 }

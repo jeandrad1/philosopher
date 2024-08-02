@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 14:33:08 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/02 15:03:34 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/02 15:47:23 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ static void *philosopher_actions(void *arg)
 
     while (true)
     {
-        philo_think(philo);
         philo_takes_fork(philo);
-        philo_eat(philo);
+        philo_eat(philo);   
+        philo_think(philo);
         philo_sleep(philo);
     }
     return (NULL);

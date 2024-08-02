@@ -61,3 +61,7 @@ bool dinner_ends(t_philo *philo);
 
 // Time functions
 long time_milliseconds(void);
+
+// Better sleep function
+void *better_sleep(long time);
+
