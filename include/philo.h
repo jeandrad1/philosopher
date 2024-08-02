@@ -51,6 +51,10 @@ bool    create_philo_threads(t_philo *philo, t_table *table);
 
 // Actions
 void *think (void *philosopher);
+void *eat(void *philosopher);
 
-//Main process of the dinner
-bool dinner(t_philo *philo);
+// Dinner ends
+bool dinner_ends(t_philo *philo);
+
+// Time functions
+long time_milliseconds(void);

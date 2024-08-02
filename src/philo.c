@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 15:16:01 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/01 18:21:48 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/02 10:29:50 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	main(int argc, char *argv[])
 	if (!init_all_philo(philo, &table))
 		return (EXIT_FAILURE);
 	
-	//Take out
+	// Take out
 	int i = 0;
 	while (i < table.philo_count)
 	{
@@ -48,16 +48,17 @@ int	main(int argc, char *argv[])
 		printf("last_eat: %lld\n", philo[i].last_eat);
 		i++;
 	}
-	//Stop here
+	// Stop here
 
 	// Threads creation
 	printf("Creating threads of the philosophers\n");
+	printf("Dinner begins\n");
+
 	if (!create_philo_threads(philo, &table))
 		return (EXIT_FAILURE);
-
+		
 	// Philosophers try to eat like normal people
-	printf("Philosophers are thinking\n");
-	if (!dinner(philo))
+	if (!dinner_ends(philo))
 		return (EXIT_FAILURE);
 		
 	//Free memory
