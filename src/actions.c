@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 14:35:09 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/03 18:07:34 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/03 19:00:31 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void *philo_takes_fork(void *philosopher)
     long time;
 
     philo = (t_philo *)philosopher;
+    if (philo->table->dead == true)
+        return NULL;
     time = time_milliseconds() - philo->table->start_time;
     pthread_mutex_lock(philo->left_fork);
     pthread_mutex_lock(&philo->table->print);

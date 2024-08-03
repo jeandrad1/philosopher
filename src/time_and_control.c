@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 10:48:59 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/03 18:31:55 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/03 18:48:29 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,6 @@ void	*control(void *arg)
 			pthread_mutex_unlock(&table->print);
 			table->dead = true;
 			return (NULL);
-		}
-		{
-			table->dead = true;
 		}
 	}
 	return (NULL);
