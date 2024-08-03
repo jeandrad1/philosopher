@@ -6,21 +6,20 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 14:35:09 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/02 16:08:48 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/03 11:52:03 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
-
-void *philo_think (void *philosopher)
+void *philo_takes_fork(void *philosopher)
 {
     t_philo *philo;
-    long    time;
+    long time;
 
     philo = (t_philo *)philosopher;
     time = time_milliseconds() - philo->table->start_time;
     pthread_mutex_lock(&philo->table->print);
-    printf("\n %ld Philosopher %d is thinking\n", time,philo->id);
+    printf("\n%ld Philosopher %d has taken a fork\n", time, philo->id);
     pthread_mutex_unlock(&philo->table->print);
     better_sleep(10);
     return NULL;
@@ -40,6 +39,19 @@ void *philo_eat(void *philosopher)
     better_sleep(10);
     return NULL;
 }
+void *philo_think (void *philosopher)
+{
+    t_philo *philo;
+    long time;
+
+    philo = (t_philo *)philosopher;
+    time = time_milliseconds() - philo->table->start_time;
+    pthread_mutex_lock(&philo->table->print);
+    printf("\nPhilosopher %d is thinking\n", philo->id);
+    pthread_mutex_unlock(&philo->table->print);
+    better_sleep(10);
+    return NULL;
+}
 
 void *philo_sleep(void *philosopher)
 {
@@ -55,16 +67,3 @@ void *philo_sleep(void *philosopher)
     return NULL;
 }
 
-void *philo_takes_fork(void *philosopher)
-{
-    t_philo *philo;
-    long time;
-
-    philo = (t_philo *)philosopher;
-    time = time_milliseconds() - philo->table->start_time;
-    pthread_mutex_lock(&philo->table->print);
-    printf("\n%ld Philosopher %d has taken a fork\n", time, philo->id);
-    pthread_mutex_unlock(&philo->table->print);
-    better_sleep(10);
-    return NULL;
-}
