@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 15:29:57 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/03 14:41:26 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/03 18:27:14 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,14 @@ static bool	ft_mutex_create(t_table *table)
 			printf("Error creating eat\n");
 			return (FAILURE);
 	}
+	if (pthread_mutex_init(&table->ready, NULL) != 0)
+	{
+		pthread_mutex_destroy(&table->print);
+		pthread_mutex_destroy(&table->is_dead);
+		pthread_mutex_destroy(&table->eat);
+		printf("Error creating ready\n");
+		return (FAILURE);
+	}
 	return (SUCCESS);
 }
 
@@ -105,9 +113,10 @@ bool init_table(t_table *table, int argc, char **argv)
 	table->time_to_die = ft_atoi(argv[2]);
 	table->time_to_eat = ft_atoi(argv[3]);
 	table->time_to_sleep = ft_atoi(argv[4]);
-	table->eat_count = 0;
+	table->eat_max = 0;
+	table->dead = false;
 	if (argc == 6)
-		table->eat_count = ft_atoi(argv[5]);
+		table->eat_max = ft_atoi(argv[5]);
 	if (!ft_mutex_create(table))
 		return (FAILURE);
 	return (SUCCESS);

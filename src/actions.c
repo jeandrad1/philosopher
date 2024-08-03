@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 14:35:09 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/03 13:40:19 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/03 18:07:34 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void *philo_eat(void *philosopher)
     pthread_mutex_lock(&philo->table->print);
     printf("\n%ld Philosopher %d is eating\n", time ,philo->id);
     pthread_mutex_unlock(&philo->table->print);
-    philo->last_eat = time_milliseconds();
+    philo->last_eat = (time_milliseconds() - philo->table->start_time) * 1000;
     usleep(philo->table->time_to_eat * 1000);
     return NULL;
 }

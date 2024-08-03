@@ -6,7 +6,7 @@
 #    By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/27 13:23:39 by jeandrad          #+#    #+#              #
-#    Updated: 2024/08/02 16:09:03 by jeandrad         ###   ########.fr        #
+#    Updated: 2024/08/03 15:14:07 by jeandrad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ FILES =	philo\
 		threads\
 		actions\
 		dinner_ends\
-		time\
+		time_and_control\
 		best_sleep\
 
 # Source directory

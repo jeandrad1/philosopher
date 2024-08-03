@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 15:16:01 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/03 14:42:08 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/03 18:34:15 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	main(int argc, char *argv[])
 		return (EXIT_FAILURE);
 		
 	// Philosophers ends the dinner
-	if (!dinner_ends(philo))
+	if (!dinner_ends(philo, &table))
 		return (EXIT_FAILURE);
 		
 	//Free memory

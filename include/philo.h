@@ -9,6 +9,10 @@
 #define SUCCESS 1
 #define FAILURE 0
 
+// Define the structure of the table and the philosopher
+typedef struct table t_table;
+typedef struct s_philo t_philo;
+
 // Table structure
 typedef struct table
 {
@@ -16,13 +20,16 @@ typedef struct table
     int				            time_to_die;
     int				            time_to_eat;
     int				            time_to_sleep;
-    int				            eat_count;
+    int				            eat_max;
     long            			start_time;
+    bool                        dead;
     pthread_mutex_t             is_dead;    
     pthread_mutex_t				*forks;
     pthread_mutex_t				print;
     pthread_mutex_t				eat;
+    pthread_mutex_t             ready;
     pthread_t                   control;
+    t_philo                     *philo;
 }					t_table;
 
 // Philosopher structure
@@ -32,7 +39,7 @@ typedef struct s_philo
     pthread_mutex_t			    *left_fork;
     pthread_mutex_t	            *right_fork;
     int				            eat_count;
-    long long	              	last_eat;
+    long    	              	last_eat;
     pthread_t	               	thread;
     t_table	                    *table;
 
@@ -56,8 +63,11 @@ void *philo_eat(void *philosopher);
 void *philo_sleep(void *philosopher);
 void *philo_takes_fork(void *philosopher);
 
+// Control function
+void *control(void *table);
+
 // Dinner ends
-bool dinner_ends(t_philo *philo);
+bool dinner_ends(t_philo *philo, t_table *table);
 
 // Time functions
 long time_milliseconds(void);
