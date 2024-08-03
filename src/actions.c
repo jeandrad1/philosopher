@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 14:35:09 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/03 11:52:03 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/03 13:40:19 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,14 @@ void *philo_takes_fork(void *philosopher)
 
     philo = (t_philo *)philosopher;
     time = time_milliseconds() - philo->table->start_time;
+    pthread_mutex_lock(philo->left_fork);
     pthread_mutex_lock(&philo->table->print);
     printf("\n%ld Philosopher %d has taken a fork\n", time, philo->id);
     pthread_mutex_unlock(&philo->table->print);
-    better_sleep(10);
+    pthread_mutex_lock(philo->right_fork);
+    pthread_mutex_lock(&philo->table->print);
+    printf("\n%ld Philosopher %d has taken a fork\n", time, philo->id);
+    pthread_mutex_unlock(&philo->table->print);
     return NULL;
 }
 
@@ -36,20 +40,7 @@ void *philo_eat(void *philosopher)
     printf("\n%ld Philosopher %d is eating\n", time ,philo->id);
     pthread_mutex_unlock(&philo->table->print);
     philo->last_eat = time_milliseconds();
-    better_sleep(10);
-    return NULL;
-}
-void *philo_think (void *philosopher)
-{
-    t_philo *philo;
-    long time;
-
-    philo = (t_philo *)philosopher;
-    time = time_milliseconds() - philo->table->start_time;
-    pthread_mutex_lock(&philo->table->print);
-    printf("\nPhilosopher %d is thinking\n", philo->id);
-    pthread_mutex_unlock(&philo->table->print);
-    better_sleep(10);
+    usleep(philo->table->time_to_eat * 1000);
     return NULL;
 }
 
@@ -63,7 +54,24 @@ void *philo_sleep(void *philosopher)
     pthread_mutex_lock(&philo->table->print);
     printf("\n%ld Philosopher %d is sleeping\n", time, philo->id);
     pthread_mutex_unlock(&philo->table->print);
-    better_sleep(10);
+    pthread_mutex_unlock(philo->left_fork);
+    pthread_mutex_unlock(philo->right_fork);
+    usleep(philo->table->time_to_sleep * 1000);
     return NULL;
 }
+void *philo_think (void *philosopher)
+{
+    t_philo *philo;
+    long time;
+
+    philo = (t_philo *)philosopher;
+    time = time_milliseconds() - philo->table->start_time;
+    pthread_mutex_lock(&philo->table->print);
+    printf("\n%ld Philosopher %d is thinking\n", time, philo->id);
+    pthread_mutex_unlock(&philo->table->print);
+    usleep(10000);
+    return NULL;
+}
+
+
 

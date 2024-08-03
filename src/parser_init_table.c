@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 15:29:57 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/01 18:24:53 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/03 14:41:26 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ bool    parse(int argc, char **argv)
         }
         i++;
     }
-	printf("All arguments are numbers\n");
     return (SUCCESS);
 }
 
@@ -102,7 +101,6 @@ static bool	ft_mutex_create(t_table *table)
 
 bool init_table(t_table *table, int argc, char **argv)
 {
-	printf("Begin inizialization\n");
 	table->philo_count = ft_atoi(argv[1]);
 	table->time_to_die = ft_atoi(argv[2]);
 	table->time_to_eat = ft_atoi(argv[3]);
@@ -112,6 +110,5 @@ bool init_table(t_table *table, int argc, char **argv)
 		table->eat_count = ft_atoi(argv[5]);
 	if (!ft_mutex_create(table))
 		return (FAILURE);
-	printf("Table initialized\n");
 	return (SUCCESS);
 }

@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 14:33:08 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/03 11:53:24 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/03 13:43:59 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,10 @@
 static void *philosopher_actions(void *arg)
 {
     t_philo *philo = (t_philo *)arg;
-
     while (true)
     {
         philo_takes_fork(philo);
-        philo_takes_fork(philo);
-        philo_eat(philo);   
+        philo_eat(philo);
         philo_sleep(philo);
         philo_think(philo);
     }
@@ -30,7 +28,7 @@ static void *philosopher_actions(void *arg)
 static bool create_thread (t_philo *philo)
 {
 
-    philo->table->start_time = time_milliseconds();
+    //philo->table->start_time = time_milliseconds();
     if (pthread_create(&philo->thread, NULL, &philosopher_actions, philo) != 0)
         return (FAILURE);
     return (SUCCESS);
