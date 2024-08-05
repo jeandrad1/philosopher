@@ -60,7 +60,7 @@ static bool	ft_mutex_create(t_table *table)
 	int i;
 
 	i = 0;
-	table->forks = malloc(sizeof(pthread_mutex_t) * table->philo_count);
+	table->forks = calloc(sizeof(pthread_mutex_t), table->philo_count);
 	if(!table->forks)
 	{
 		printf("Error creating forks\n");
@@ -114,7 +114,7 @@ bool init_table(t_table *table, int argc, char **argv)
 	table->time_to_eat = ft_atoi(argv[3]);
 	table->time_to_sleep = ft_atoi(argv[4]);
 	table->eat_max = 0;
-	table->dead = false;
+	table->stop = false;
 	if (argc == 6)
 		table->eat_max = ft_atoi(argv[5]);
 	if (!ft_mutex_create(table))

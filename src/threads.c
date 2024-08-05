@@ -15,15 +15,19 @@
 static void *philosopher_actions(void *arg)
 {
     t_philo *philo = (t_philo *)arg;
-    pthread_mutex_lock(&philo->table->ready);
-    pthread_mutex_unlock(&philo->table->ready);
-    printf("Philosopher %d is ready\n", philo->id);
-    while (true)
+//    pthread_mutex_lock(&philo->table->ready);
+//    pthread_mutex_unlock(&philo->table->ready);
+//    printf("Philosopher %d is ready\n", philo->id);
+    while (philo->table->stop == false)
     {
-        philo_takes_fork(philo);
-        philo_eat(philo);
-        philo_sleep(philo);
-        philo_think(philo);
+        if (philo_takes_fork(philo) == false)
+            break ;
+        if (philo_eat(philo) == false)
+            break ;
+        if (philo_sleep(philo) == false)
+            break ;
+        if (philo_think(philo) == false)
+            break ;
     }
     return (NULL);
 }
@@ -43,13 +47,13 @@ bool create_philo_threads(t_philo *philo, t_table *table)
     pthread_mutex_lock(&table->ready);
     pthread_create(&table->control, NULL, &control, table);
     table->start_time = time_milliseconds();
-    while (i < table->philo_count && table->dead != true)
+    while (i < table->philo_count)
     {
         if (!create_thread(&philo[i]))
             return (FAILURE);
         i++;
     }
-    printf("All threads created\n");
+    //printf("All threads created\n");
     pthread_mutex_unlock(&table->ready);
     return (SUCCESS);
 }

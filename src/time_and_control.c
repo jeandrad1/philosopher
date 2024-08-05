@@ -28,17 +28,9 @@ void	*control(void *arg)
 
 	table = (t_table *)arg;
 
-	while(true)
+	while(table->stop == false)
 	{
-		if (table->philo_count == 1)
-		{
-			usleep(table->time_to_die * 1000);
-			pthread_mutex_lock(&table->print);
-			printf("\n%ld Philosopher 1 died\n", time_milliseconds() - table->start_time);
-			pthread_mutex_unlock(&table->print);
-			table->dead = true;
-			return (NULL);
-		}
+		usleep(1000);
 	}
 	return (NULL);
 }

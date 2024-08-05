@@ -15,7 +15,7 @@
 static void stop_all_threads(t_table *table)
 {
     pthread_mutex_lock(&table->is_dead);
-    table->dead = true;
+    table->stop = true;
     pthread_mutex_unlock(&table->is_dead);
 }
 

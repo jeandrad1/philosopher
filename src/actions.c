@@ -11,14 +11,14 @@
 /* ************************************************************************** */
 
 #include "philo.h"
-void *philo_takes_fork(void *philosopher)
+bool philo_takes_fork(t_philo *philosopher)
 {
     t_philo *philo;
     long time;
 
     philo = (t_philo *)philosopher;
     if (philo->id % 2 == 0)
-        better_sleep(30000);
+        better_sleep(30);
     time = (time_milliseconds() - philo->table->start_time);
     pthread_mutex_lock(philo->left_fork);
     pthread_mutex_lock(&philo->table->print);
@@ -28,52 +28,58 @@ void *philo_takes_fork(void *philosopher)
     pthread_mutex_lock(&philo->table->print);
     printf("\n%ld Philosopher %d has taken right fork\n", time, philo->id);
     pthread_mutex_unlock(&philo->table->print);
-    return NULL;
+    return true;
 }
 
-void *philo_eat(void *philosopher)
+bool philo_eat(t_philo *philosopher)
 {
     t_philo *philo;
     long time;
 
     philo = (t_philo *)philosopher;
     time = (time_milliseconds() - philo->table->start_time);
+    if (philo->table->stop == true)
+        return false;
     pthread_mutex_lock(&philo->table->print);
     printf("\n%ld Philosopher %d is eating\n", time ,philo->id);
     pthread_mutex_unlock(&philo->table->print);
     philo->last_eat = (time_milliseconds() - philo->table->start_time);
-    usleep(philo->table->time_to_eat);
+    better_sleep(philo->table->time_to_eat);
     pthread_mutex_unlock(philo->left_fork);
     pthread_mutex_unlock(philo->right_fork);
 
-    return NULL;
+    return true;
 }
 
-void *philo_sleep(void *philosopher)
+bool philo_sleep(t_philo *philosopher)
 {
     t_philo *philo;
     long time;
 
     philo = (t_philo *)philosopher;
     time = time_milliseconds() - philo->table->start_time;
+    if (philo->table->stop == true)
+        return false;
     pthread_mutex_lock(&philo->table->print);
     printf("\n%ld Philosopher %d is sleeping\n", time, philo->id);
     pthread_mutex_unlock(&philo->table->print);
     usleep(philo->table->time_to_sleep);
-    return NULL;
+    return true;
 }
-void *philo_think (void *philosopher)
+bool philo_think (t_philo *philosopher)
 {
     t_philo *philo;
     long time;
 
     philo = (t_philo *)philosopher;
     time = time_milliseconds() - philo->table->start_time;
+    if (philo->table->stop == true)
+        return false;
     pthread_mutex_lock(&philo->table->print);
     printf("\n%ld Philosopher %d is thinking\n", time, philo->id);
     pthread_mutex_unlock(&philo->table->print);
     usleep(10000);
-    return NULL;
+    return true;
 }
 
 

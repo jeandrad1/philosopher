@@ -22,7 +22,7 @@ typedef struct table
     int				            time_to_sleep;
     int				            eat_max;
     long            			start_time;
-    bool                        dead;
+    bool                        stop;
     pthread_mutex_t             is_dead;    
     pthread_mutex_t				*forks;
     pthread_mutex_t				print;
@@ -58,10 +58,10 @@ bool    init_all_philo(t_philo *philo, t_table *table);
 bool    create_philo_threads(t_philo *philo, t_table *table);
 
 // Actions
-void *philo_think (void *philosopher);
-void *philo_eat(void *philosopher);
-void *philo_sleep(void *philosopher);
-void *philo_takes_fork(void *philosopher);
+bool philo_think (t_philo *philosopher);
+bool philo_eat(t_philo *philosopher);
+bool philo_sleep(t_philo *philosopher);
+bool philo_takes_fork(t_philo *philosopher);
 
 // Control function
 void *control(void *table);
