@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 14:35:09 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/05 13:03:04 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/06 10:18:35 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,27 @@ bool philo_takes_fork(t_philo *philosopher)
 
     philo = (t_philo *)philosopher;
     if (philo->id % 2 == 0)
-        better_sleep(30);
+        better_sleep(30); // Stagger even philosophers
+
     time = (time_milliseconds() - philo->table->start_time);
-    pthread_mutex_lock(philo->left_fork);
+
+    if (philo->id % 2 == 0) {
+        pthread_mutex_lock(philo->right_fork);
+        pthread_mutex_lock(philo->left_fork);
+    } else 
+    {
+        pthread_mutex_lock(philo->left_fork);
+        pthread_mutex_lock(philo->right_fork);
+    }
+
     pthread_mutex_lock(&philo->table->print);
     printf("\n%ld Philosopher %d has taken left fork\n", time, philo->id);
     pthread_mutex_unlock(&philo->table->print);
-    pthread_mutex_lock(philo->right_fork);
+
     pthread_mutex_lock(&philo->table->print);
     printf("\n%ld Philosopher %d has taken right fork\n", time, philo->id);
     pthread_mutex_unlock(&philo->table->print);
+
     return true;
 }
 
@@ -78,7 +89,7 @@ bool philo_think (t_philo *philosopher)
     pthread_mutex_lock(&philo->table->print);
     printf("\n%ld Philosopher %d is thinking\n", time, philo->id);
     pthread_mutex_unlock(&philo->table->print);
-    usleep(10000);
+    usleep(100);
     return true;
 }
 

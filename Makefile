@@ -6,7 +6,7 @@
 #    By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/27 13:23:39 by jeandrad          #+#    #+#              #
-#    Updated: 2024/08/03 15:14:07 by jeandrad         ###   ########.fr        #
+#    Updated: 2024/08/06 10:36:55 by jeandrad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME = philo
 
 # Compiler
-CC = clang
+CC = gcc
 
 # Compiler flags
 FLAGS = -Wall -Werror -Wextra -Iinclude -g -pthread #-fsanitize
@@ -28,6 +28,7 @@ FILES =	philo\
 		dinner_ends\
 		time_and_control\
 		best_sleep\
+		utils\
 
 # Source directory
 SRCS_DIR = ./src/
