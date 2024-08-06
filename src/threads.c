@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 14:33:08 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/06 11:32:30 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/06 19:24:17 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,15 +45,14 @@ bool create_philo_threads(t_philo *philo, t_table *table)
 
     i = 0;
     pthread_mutex_lock(&table->ready);
-    pthread_create(&table->control, NULL, &control, table);
     table->start_time = time_milliseconds();
     while (i < table->philo_count)
     {
         if (!create_thread(&philo[i]))
             return (FAILURE);
-        usleep(100);
         i++;
     }
+    pthread_create(&table->control, NULL, &control, table);
     pthread_mutex_unlock(&table->ready);
     return (SUCCESS);
 }

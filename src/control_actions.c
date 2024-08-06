@@ -6,37 +6,52 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 11:47:53 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/06 18:23:07 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/06 19:28:43 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void check_stop(t_table *table)
+void check_stop(t_table **table)
 {
-    long i;
-    long has_eaten;
+    // long i;
+    // long has_eaten;
 
-    has_eaten = 0;
-    while (table->stop == false)
+    // has_eaten = 0;
+    // while (table->stop == false)
+    // {
+    //     i = 0;
+    //     has_eaten = 0;
+	// 	while (i < table->philo_count)
+	// 	{
+	// 		if (table->philo[i].eat_count >= table->eat_max)
+	// 			has_eaten++;
+	// 		i++;
+	// 	}
+    //     if (has_eaten == table->philo_count)
+    //     {
+    //         table->stop = true;
+    //         pthread_mutex_lock(&table->print);
+    //         printf("Philosophers have eaten enough\n");
+    //         pthread_mutex_unlock(&table->print);
+    //     }
+    // }
+    // table->stop = true;
+
+    long i;
+
+    i = 0;
+    while (i < (*table)->philo_count * 3)
     {
-        i = 0;
-        has_eaten = 0;
-		while (i < table->philo_count)
-		{
-			if ((&table->philo[i])->eat_count >= table->eat_max)
-				has_eaten++;
-			i++;
-		}
-        if (has_eaten == table->philo_count)
+        if (i >= (*table)->philo_count * 2)
         {
-            table->stop = true;
-            pthread_mutex_lock(&table->is_dead);
-            printf ("All philosophers have eaten %i times\n", table->eat_max); 
-            pthread_mutex_unlock(&table->is_dead);
+            (*table)->stop = true;
+            pthread_mutex_lock(&(*table)->print);
+            printf("Philosophers have eaten enough\n");
+            pthread_mutex_unlock(&(*table)->print);
         }
+        i++;
     }
-    table->stop = true;
 }
 
 void	*control(void *arg)
@@ -44,10 +59,13 @@ void	*control(void *arg)
 	t_table	*table;
 
 	table = (t_table *)arg;
-    pthread_mutex_lock(&table->ready);
+    //pthread_mutex_lock(&table->ready);
 	while(1)
 	{
-		//check_stop(table);
+        //pthread_mutex_lock(&table->print);
+        printf("Control is watching\n");
+        //pthread_mutex_unlock(&table->print);
+		check_stop(&table);
         if (table->stop == true)
         {
             pthread_mutex_lock(&table->is_dead);
@@ -55,6 +73,7 @@ void	*control(void *arg)
             pthread_mutex_unlock(&table->is_dead);
             break ;
         }
+        usleep(1000);
 	}
 	return (NULL);
 }
