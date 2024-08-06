@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 15:29:57 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/06 10:33:21 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/06 11:09:04 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ static bool	ft_mutex_create(t_table *table)
 	int i;
 
 	i = 0;
-	table->forks = ft_calloc(sizeof(pthread_mutex_t), table->philo_count);
+	table->forks = malloc(sizeof(pthread_mutex_t) * table->philo_count);
 	if(!table->forks)
 	{
 		printf("Error creating forks\n");
