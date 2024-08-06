@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 14:35:09 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/06 10:18:35 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/06 11:31:41 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ bool philo_takes_fork(t_philo *philosopher)
 
     philo = (t_philo *)philosopher;
     if (philo->id % 2 == 0)
-        better_sleep(30); // Stagger even philosophers
+        usleep(30); 
 
     time = (time_milliseconds() - philo->table->start_time);
 
@@ -55,7 +55,7 @@ bool philo_eat(t_philo *philosopher)
     printf("\n%ld Philosopher %d is eating\n", time ,philo->id);
     pthread_mutex_unlock(&philo->table->print);
     philo->last_eat = (time_milliseconds() - philo->table->start_time);
-    better_sleep(philo->table->time_to_eat);
+    usleep(philo->table->time_to_eat);
     pthread_mutex_unlock(philo->left_fork);
     pthread_mutex_unlock(philo->right_fork);
 

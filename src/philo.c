@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 15:16:01 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/06 11:09:26 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/06 11:25:33 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(int argc, char *argv[])
 	if (!init_table(&table, argc, argv))
 		return (EXIT_FAILURE);
 	
-	philo = malloc(table.philo_count * sizeof(t_philo));
+	philo = ft_calloc(table.philo_count, sizeof(t_philo));
 	if (!init_all_philo(philo, &table))
 		return (EXIT_FAILURE);
 	
