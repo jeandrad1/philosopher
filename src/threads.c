@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 14:33:08 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/06 11:32:30 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/06 11:33:42 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,6 @@
 static void *philosopher_actions(void *arg)
 {
     t_philo *philo = (t_philo *)arg;
-//    pthread_mutex_lock(&philo->table->ready);
-//    pthread_mutex_unlock(&philo->table->ready);
-//    printf("Philosopher %d is ready\n", philo->id);
     while (philo->table->stop == false)
     {
         if (philo_takes_fork(philo) == false)

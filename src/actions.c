@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 14:35:09 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/06 11:31:41 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/06 11:34:12 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,6 @@ bool philo_takes_fork(t_philo *philosopher)
         usleep(30); 
 
     time = (time_milliseconds() - philo->table->start_time);
-
-    if (philo->id % 2 == 0) {
-        pthread_mutex_lock(philo->right_fork);
-        pthread_mutex_lock(philo->left_fork);
-    } else 
-    {
-        pthread_mutex_lock(philo->left_fork);
-        pthread_mutex_lock(philo->right_fork);
-    }
-
     pthread_mutex_lock(&philo->table->print);
     printf("\n%ld Philosopher %d has taken left fork\n", time, philo->id);
     pthread_mutex_unlock(&philo->table->print);
