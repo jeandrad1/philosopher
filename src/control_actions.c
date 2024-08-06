@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 11:47:53 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/06 15:59:54 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/06 18:13:50 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,9 @@ void	*control(void *arg)
 		//check_stop(table);
         if (table->stop == true)
         {
-            printf("HA MUERTO!!\n");
+            pthread_mutex_lock(&table->is_dead);
+            printf("Philosopher ends the dinner\n");
+            pthread_mutex_unlock(&table->is_dead);
             break ;
         }
 	}

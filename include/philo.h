@@ -14,6 +14,11 @@
     #define FAILURE 0
 # endif
 
+# define EAT "is eating"
+# define SLEEP "is sleeping"
+# define THINK "is thinking"
+# define DEAD "died"
+
 // Define the structure of the table and the philosopher
 typedef struct table t_table;
 typedef struct s_philo t_philo;

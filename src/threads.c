@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 14:33:08 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/06 16:02:15 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/06 18:18:04 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 static void *philosopher_actions(void *arg)
 {
     t_philo *philo = (t_philo *)arg;
-    //while (philo->table->start == false || philo->table->stop == true)
-        //;
+
     while (1)
     {
         if (philo->table->start == true)
@@ -30,10 +29,10 @@ static void *philosopher_actions(void *arg)
             if (philo_think(philo) == false)
                 break ;
         }
-        if (philo->table->eat_max == philo->eat_count)
+        if (philo->table->eat_max == philo->eat_count)  
         {
-            philo->table->stop = true;
-            break ;
+          philo->table->stop = true;
+          break ;
         }
     }
     return (NULL);
