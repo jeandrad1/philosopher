@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 10:48:59 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/03 18:48:29 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/06 12:06:29 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,3 @@ long	time_milliseconds(void)
 	return (time_ms);
 }
 
-void	*control(void *arg)
-{
-	t_table	*table;
-
-	table = (t_table *)arg;
-
-	while(table->stop == false)
-	{
-		usleep(1000);
-	}
-	return (NULL);
-}

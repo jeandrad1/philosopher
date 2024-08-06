@@ -6,7 +6,7 @@
 #    By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/27 13:23:39 by jeandrad          #+#    #+#              #
-#    Updated: 2024/08/06 11:10:04 by jeandrad         ###   ########.fr        #
+#    Updated: 2024/08/06 13:01:20 by jeandrad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,9 +26,10 @@ FILES =	philo\
 		threads\
 		actions\
 		dinner_ends\
-		time_and_control\
+		time\
 		best_sleep\
 		philo_utils\
+		control_actions\
 
 # Source directory
 SRCS_DIR = ./src/

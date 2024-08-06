@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 14:33:08 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/06 11:33:42 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/06 14:33:05 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 static void *philosopher_actions(void *arg)
 {
     t_philo *philo = (t_philo *)arg;
+    while (philo->table->start == false)
+        ;
     while (philo->table->stop == false)
     {
         if (philo_takes_fork(philo) == false)
@@ -31,6 +33,7 @@ static void *philosopher_actions(void *arg)
 
 static bool create_thread (t_philo *philo)
 {
+    //peta aqui
     if (pthread_create(&philo->thread, NULL, &philosopher_actions, philo) != 0)
         return (FAILURE);
     return (SUCCESS);
@@ -48,9 +51,9 @@ bool create_philo_threads(t_philo *philo, t_table *table)
     {
         if (!create_thread(&philo[i]))
             return (FAILURE);
-        usleep(100);
         i++;
-    }
+    }   
+    table->start = true;
     pthread_mutex_unlock(&table->ready);
     return (SUCCESS);
 }
