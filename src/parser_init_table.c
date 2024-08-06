@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 15:29:57 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/06 14:55:44 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/06 11:09:04 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,6 @@ bool init_table(t_table *table, int argc, char **argv)
 	table->time_to_sleep = ft_atoi(argv[4]);
 	table->eat_max = 0;
 	table->stop = false;
-	table->start = false;
 	if (argc == 6)
 		table->eat_max = ft_atoi(argv[5]);
 	if (!ft_mutex_create(table))

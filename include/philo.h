@@ -14,11 +14,6 @@
     #define FAILURE 0
 # endif
 
-# define EAT "is eating"
-# define SLEEP "is sleeping"
-# define THINK "is thinking"
-# define DEAD "died"
-
 // Define the structure of the table and the philosopher
 typedef struct table t_table;
 typedef struct s_philo t_philo;
@@ -33,7 +28,6 @@ typedef struct table
     int				            eat_max;
     long            			start_time;
     bool                        stop;
-    bool                        start;
     pthread_mutex_t             is_dead;    
     pthread_mutex_t				*forks;
     pthread_mutex_t				print;
@@ -79,8 +73,6 @@ bool philo_takes_fork(t_philo *philosopher);
 
 // Control function
 void *control(void *table);
-void check_stop(t_table *table);
-
 
 // Dinner ends
 bool dinner_ends(t_philo *philo, t_table *table);

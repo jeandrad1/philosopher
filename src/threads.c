@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 14:33:08 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/06 18:18:04 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/06 11:32:30 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,19 @@
 static void *philosopher_actions(void *arg)
 {
     t_philo *philo = (t_philo *)arg;
-
-    while (1)
+//    pthread_mutex_lock(&philo->table->ready);
+//    pthread_mutex_unlock(&philo->table->ready);
+//    printf("Philosopher %d is ready\n", philo->id);
+    while (philo->table->stop == false)
     {
-        if (philo->table->start == true)
-        {
-            if (philo_takes_fork(philo) == false)
-                break ;
-            if (philo_eat(philo) == false)
-                break ;
-            if (philo_sleep(philo) == false)
-                break ;
-            if (philo_think(philo) == false)
-                break ;
-        }
-        if (philo->table->eat_max == philo->eat_count)  
-        {
-          philo->table->stop = true;
-          break ;
-        }
+        if (philo_takes_fork(philo) == false)
+            break ;
+        if (philo_eat(philo) == false)
+            break ;
+        if (philo_sleep(philo) == false)
+            break ;
+        if (philo_think(philo) == false)
+            break ;
     }
     return (NULL);
 }
@@ -57,9 +51,9 @@ bool create_philo_threads(t_philo *philo, t_table *table)
     {
         if (!create_thread(&philo[i]))
             return (FAILURE);
+        usleep(100);
         i++;
-    }   
-    table->start = true;
+    }
     pthread_mutex_unlock(&table->ready);
     return (SUCCESS);
 }
