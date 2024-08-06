@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 14:33:08 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/06 14:33:05 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/06 16:02:15 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,32 @@
 static void *philosopher_actions(void *arg)
 {
     t_philo *philo = (t_philo *)arg;
-    while (philo->table->start == false)
-        ;
-    while (philo->table->stop == false)
+    //while (philo->table->start == false || philo->table->stop == true)
+        //;
+    while (1)
     {
-        if (philo_takes_fork(philo) == false)
+        if (philo->table->start == true)
+        {
+            if (philo_takes_fork(philo) == false)
+                break ;
+            if (philo_eat(philo) == false)
+                break ;
+            if (philo_sleep(philo) == false)
+                break ;
+            if (philo_think(philo) == false)
+                break ;
+        }
+        if (philo->table->eat_max == philo->eat_count)
+        {
+            philo->table->stop = true;
             break ;
-        if (philo_eat(philo) == false)
-            break ;
-        if (philo_sleep(philo) == false)
-            break ;
-        if (philo_think(philo) == false)
-            break ;
+        }
     }
     return (NULL);
 }
 
 static bool create_thread (t_philo *philo)
 {
-    //peta aqui
     if (pthread_create(&philo->thread, NULL, &philosopher_actions, philo) != 0)
         return (FAILURE);
     return (SUCCESS);
