@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 14:33:08 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/07 15:37:38 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/07 19:20:13 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,7 @@ static void *philosopher_actions(void *arg)
     {
         
         if (philo_takes_fork(philo) == false)
-        {
-            printf("el philo ha fallado en coger tenedores \n"); 
             break ;
-        }
         if (philo_eat(philo) == false)
             break ;
         if (philo_sleep(philo) == false)

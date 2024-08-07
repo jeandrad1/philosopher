@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 14:35:09 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/07 15:40:54 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/07 19:19:41 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ bool protected_print(t_philo philo, char *str)
 {
     long time;
 
+    if (philo.table->stop == true)
+        return false;
     time = time_milliseconds() - philo.table->start_time;
     pthread_mutex_lock(&philo.table->print);
     printf("\n%ld Philosopher %d %s\n", time, philo.id, str);
@@ -30,7 +32,6 @@ bool philo_takes_fork(t_philo *philo)
 
     if(philo->table->stop == true)
         return false;
-
     pthread_mutex_lock(philo->left_fork);
     protected_print(*philo, "has taken left fork");
     pthread_mutex_lock(philo->right_fork);
@@ -43,12 +44,7 @@ bool philo_eat(t_philo *philo)
 {
     //pthread_mutex_lock(&philo->table->eat);
     if (philo->table->stop == true)
-    {    
-        printf("Philosopher %d is full\n", philo->id);
-        pthread_mutex_unlock(philo->left_fork);
-        pthread_mutex_unlock(philo->right_fork);
         return false;
-    }
     protected_print(*philo, "is eating");
     philo->last_eat = (time_milliseconds() - philo->table->start_time);
     philo->eat_count++;
