@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 14:56:01 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/06 19:20:39 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/07 10:28:54 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@
 //     pthread_mutex_unlock(&table->is_dead);
 // }
 
+
+// This functions ends the dinner
+// It joins the control thread and the philosopher threads
 bool dinner_ends(t_philo *philo, t_table *table)
 {
     int i;

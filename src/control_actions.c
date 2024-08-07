@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 11:47:53 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/06 19:28:43 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/07 10:05:49 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,9 @@ void	*control(void *arg)
     //pthread_mutex_lock(&table->ready);
 	while(1)
 	{
-        //pthread_mutex_lock(&table->print);
+        pthread_mutex_lock(&table->print);
         printf("Control is watching\n");
-        //pthread_mutex_unlock(&table->print);
+        pthread_mutex_unlock(&table->print);
 		check_stop(&table);
         if (table->stop == true)
         {

@@ -6,13 +6,15 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 10:24:48 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/03 13:22:28 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/07 10:24:43 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
 // Function to initialize the philosopher
+// it sets all the values and
+// assigns the forks on the table
 static bool init_philo (t_philo *philo, t_table *table, int i)
 {
     philo->id = i + 1;
@@ -28,6 +30,7 @@ static bool init_philo (t_philo *philo, t_table *table, int i)
 }
 
 // Function to initialize all philosophers
+// It will call the init_philo function for each philosopher
 bool init_all_philo(t_philo *philo, t_table *table)
 {
     int i;

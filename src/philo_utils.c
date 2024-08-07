@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 10:33:32 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/06 11:19:21 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/07 10:23:16 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,21 @@ void	*ft_calloc(size_t num, size_t size)
 		ft_memset(ptr, 0, total_size);
 	}
 	return (ptr);
+}
+
+// This function converts a string to an integer 
+// Only allows positive numbers                  
+int ft_atoi(const char *str)
+{
+	int i;
+	int res;
+
+	i = 0;
+	res = 0;
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		res = res * 10 + str[i] - '0';
+		i++;
+	}
+	return (res);
 }

@@ -6,12 +6,14 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 14:33:08 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/06 19:24:17 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/07 10:28:14 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
+// This is the rutine of the philosophers
+// during the dinner and the condition to stop
 static void *philosopher_actions(void *arg)
 {
     t_philo *philo = (t_philo *)arg;
@@ -32,6 +34,8 @@ static void *philosopher_actions(void *arg)
     return (NULL);
 }
 
+// This function creates the thread for the philosopher
+// and checks if it was created correctly
 static bool create_thread (t_philo *philo)
 {
     if (pthread_create(&philo->thread, NULL, &philosopher_actions, philo) != 0)
@@ -39,6 +43,9 @@ static bool create_thread (t_philo *philo)
     return (SUCCESS);
 }
 
+// This function creates the threads for the philosophers and the control thread
+// It also locks the ready mutex to make sure all the threads are created at the same time
+// It also sets the start time of the dinner
 bool create_philo_threads(t_philo *philo, t_table *table)
 {
     int i;

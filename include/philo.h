@@ -52,6 +52,8 @@ typedef struct s_philo
 
 // Utils
 void	*ft_calloc(size_t num, size_t size);
+int     ft_atoi(const char *str);
+
 
 // First parser function
 bool    parse(int argc, char **argv);
