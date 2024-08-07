@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 14:35:09 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/07 14:44:38 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/07 15:40:54 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,11 @@ bool protected_print(t_philo philo, char *str)
 bool philo_takes_fork(t_philo *philo)
 {
     if (philo->id % 2 == 0)
-        usleep(300); 
+        usleep(5); 
 
-    if(philo->table->stop == false)
+    if(philo->table->stop == true)
         return false;
+
     pthread_mutex_lock(philo->left_fork);
     protected_print(*philo, "has taken left fork");
     pthread_mutex_lock(philo->right_fork);
@@ -42,14 +43,8 @@ bool philo_eat(t_philo *philo)
 {
     //pthread_mutex_lock(&philo->table->eat);
     if (philo->table->stop == true)
-    {
+    {    
         printf("Philosopher %d is full\n", philo->id);
-        pthread_mutex_unlock(philo->left_fork);
-        pthread_mutex_unlock(philo->right_fork);
-        return false;
-    }
-    if(philo->table->stop == false)
-    {
         pthread_mutex_unlock(philo->left_fork);
         pthread_mutex_unlock(philo->right_fork);
         return false;
@@ -68,7 +63,7 @@ bool philo_eat(t_philo *philo)
 
 bool philo_sleep(t_philo *philo)
 {
-    if(philo->table->stop == false)
+    if(philo->table->stop == true)
         return false;
     protected_print(*philo, "is sleeping");
     usleep(philo->table->time_to_sleep);
@@ -76,7 +71,7 @@ bool philo_sleep(t_philo *philo)
 }
 bool philo_think (t_philo *philo)
 {
-    if(philo->table->stop == false)
+    if(philo->table->stop == true)
         return false;
     protected_print(*philo, "is thinking");
     usleep(1000);

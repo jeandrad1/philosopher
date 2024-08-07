@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 11:47:53 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/07 14:46:09 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/07 16:53:57 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,19 @@ void check_stop(t_table *table)
     // }
     // table->stop = true;
 
+    int i;
+
+    i = 0;
+
+    while (i)
     if (table->stop == true)
         return ;
     long now ;
     now = (time_milliseconds() - table->start_time);
-    
-    if ((now - table->philo[1].last_eat) > table->time_to_die)
+
+    if ((now - table->philo[i].last_eat) > table->time_to_die)
     {
-        protected_print(table->philo[1], "died");
+        protected_print(table->philo[i], "died");
         pthread_mutex_lock(&table->is_dead);
         table->stop = true;
         pthread_mutex_unlock(&table->is_dead);
@@ -61,6 +66,7 @@ void	*control(void *arg)
 
 	table = (t_table *)arg;
     //pthread_mutex_lock(&table->ready);
+    pthread_mutex_lock(&table->ready);
 	while(1)
 	{
 		check_stop(table);
@@ -73,5 +79,6 @@ void	*control(void *arg)
         }
         usleep(1000);
 	}
+    pthread_mutex_unlock(&table->ready);
 	return (NULL);
 }

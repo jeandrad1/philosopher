@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 14:33:08 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/07 14:55:05 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/07 15:37:38 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,12 @@ static void *philosopher_actions(void *arg)
 //    printf("Philosopher %d is ready\n", philo->id);
     while (philo->table->stop == false)
     {
+        
         if (philo_takes_fork(philo) == false)
+        {
+            printf("el philo ha fallado en coger tenedores \n"); 
             break ;
+        }
         if (philo_eat(philo) == false)
             break ;
         if (philo_sleep(philo) == false)
@@ -57,7 +61,6 @@ bool create_philo_threads(t_philo *philo, t_table *table)
     {
         if (!create_thread(&philo[i]))
             return (FAILURE);
-        printf("Philosopher %d is ready\n", philo[i].id);
         i++;
     }
     pthread_create(&table->control, NULL, &control, table);
