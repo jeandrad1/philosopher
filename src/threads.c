@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 14:33:08 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/07 10:28:14 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/07 14:55:05 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ bool create_philo_threads(t_philo *philo, t_table *table)
     {
         if (!create_thread(&philo[i]))
             return (FAILURE);
+        printf("Philosopher %d is ready\n", philo[i].id);
         i++;
     }
     pthread_create(&table->control, NULL, &control, table);

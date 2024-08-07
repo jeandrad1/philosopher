@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 11:47:53 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/07 12:41:52 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/07 14:46:09 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,20 +38,21 @@ void check_stop(t_table *table)
     // }
     // table->stop = true;
 
-    long i;
-
-    i = 0;
-    while (i < table->philo_count)
+    if (table->stop == true)
+        return ;
+    long now ;
+    now = (time_milliseconds() - table->start_time);
+    
+    if ((now - table->philo[1].last_eat) > table->time_to_die)
     {
-        if (i >= table->philo_count * 2)
-        {
-            //table->stop = true;
-            pthread_mutex_lock(&table->print);
-            printf("Control is still watching\n");
-            pthread_mutex_unlock(&table->print);
-        }
-        i++;
+        protected_print(table->philo[1], "died");
+        pthread_mutex_lock(&table->is_dead);
+        table->stop = true;
+        pthread_mutex_unlock(&table->is_dead);
+        return ;
     }
+    return ;
+
 }
 
 void	*control(void *arg)
