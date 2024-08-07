@@ -6,13 +6,13 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 11:47:53 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/07 10:05:49 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/07 11:46:54 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void check_stop(t_table **table)
+void check_stop(t_table *table)
 {
     // long i;
     // long has_eaten;
@@ -41,14 +41,14 @@ void check_stop(t_table **table)
     long i;
 
     i = 0;
-    while (i < (*table)->philo_count * 3)
+    while (i < table->philo_count * 3)
     {
-        if (i >= (*table)->philo_count * 2)
+        if (i >= table->philo_count * 2)
         {
-            (*table)->stop = true;
-            pthread_mutex_lock(&(*table)->print);
+            table->stop = true;
+            pthread_mutex_lock(&table->print);
             printf("Philosophers have eaten enough\n");
-            pthread_mutex_unlock(&(*table)->print);
+            pthread_mutex_unlock(&table->print);
         }
         i++;
     }
@@ -62,10 +62,7 @@ void	*control(void *arg)
     //pthread_mutex_lock(&table->ready);
 	while(1)
 	{
-        pthread_mutex_lock(&table->print);
-        printf("Control is watching\n");
-        pthread_mutex_unlock(&table->print);
-		check_stop(&table);
+		check_stop(table);
         if (table->stop == true)
         {
             pthread_mutex_lock(&table->is_dead);
