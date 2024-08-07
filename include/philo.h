@@ -85,6 +85,8 @@ long time_milliseconds(void);
 // Better sleep function
 void *better_sleep(long time);
 
-//Printf
-bool protected_print(t_philo philo, char *str);
+//Protected
+bool protected_print(t_philo *philo, char *str);
+int protected_death(t_philo *philo);
+
 
