@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 14:35:09 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/07 10:35:25 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/07 10:48:27 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,13 @@ bool philo_eat(t_philo *philo)
     if (philo->table->stop == true)
     {
         printf("Philosopher %d is full\n", philo->id);
-        pthread_mutex_lock(&philo->table->eat);
+        pthread_mutex_unlock(philo->left_fork);
+        pthread_mutex_unlock(philo->right_fork);
         return false;
     }
     protected_print(*philo, "is eating");
     philo->last_eat = (time_milliseconds() - philo->table->start_time);
     philo->eat_count++;
-    printf("Philosopher time to eat %d\n", philo->table->time_to_eat);
     usleep(philo->table->time_to_eat * 1000);
     pthread_mutex_unlock(philo->left_fork);
     pthread_mutex_unlock(philo->right_fork);
