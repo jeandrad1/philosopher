@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 11:47:53 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/07 11:46:54 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/07 12:41:52 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,13 @@ void check_stop(t_table *table)
     long i;
 
     i = 0;
-    while (i < table->philo_count * 3)
+    while (i < table->philo_count)
     {
         if (i >= table->philo_count * 2)
         {
-            table->stop = true;
+            //table->stop = true;
             pthread_mutex_lock(&table->print);
-            printf("Philosophers have eaten enough\n");
+            printf("Control is still watching\n");
             pthread_mutex_unlock(&table->print);
         }
         i++;
@@ -65,9 +65,9 @@ void	*control(void *arg)
 		check_stop(table);
         if (table->stop == true)
         {
-            pthread_mutex_lock(&table->is_dead);
+            pthread_mutex_lock(&table->print);
             printf("Philosopher ends the dinner\n");
-            pthread_mutex_unlock(&table->is_dead);
+            pthread_mutex_unlock(&table->print);
             break ;
         }
         usleep(1000);
