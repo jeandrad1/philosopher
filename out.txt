@@ -1,0 +1,1377 @@
+
+0 Philosopher 1 has taken left fork
+
+0 Philosopher 1 has taken right fork
+
+0 Philosopher 1 is eating
+
+0 Philosopher 5 has taken left fork
+
+0 Philosopher 5 has taken right fork
+
+0 Philosopher 5 is eating
+
+0 Philosopher 3 has taken left fork
+
+0 Philosopher 3 has taken right fork
+
+0 Philosopher 3 is eating
+
+0 Philosopher 7 has taken left fork
+
+0 Philosopher 7 has taken right fork
+
+0 Philosopher 7 is eating
+
+0 Philosopher 9 has taken left fork
+
+0 Philosopher 9 has taken right fork
+
+0 Philosopher 9 is eating
+
+0 Philosopher 11 has taken left fork
+
+0 Philosopher 11 has taken right fork
+
+0 Philosopher 11 is eating
+
+0 Philosopher 13 has taken left fork
+
+0 Philosopher 13 has taken right fork
+
+0 Philosopher 13 is eating
+
+0 Philosopher 15 has taken left fork
+
+0 Philosopher 15 has taken right fork
+
+0 Philosopher 15 is eating
+
+0 Philosopher 17 has taken left fork
+
+0 Philosopher 17 has taken right fork
+
+0 Philosopher 17 is eating
+
+0 Philosopher 19 has taken left fork
+
+0 Philosopher 19 has taken right fork
+
+0 Philosopher 19 is eating
+
+1 Philosopher 27 has taken left fork
+
+1 Philosopher 43 has taken left fork
+
+1 Philosopher 39 has taken left fork
+
+1 Philosopher 43 has taken right fork
+
+1 Philosopher 43 is eating
+
+1 Philosopher 31 has taken left fork
+
+1 Philosopher 35 has taken left fork
+
+1 Philosopher 35 has taken right fork
+
+1 Philosopher 31 has taken right fork
+
+1 Philosopher 31 is eating
+
+1 Philosopher 29 has taken left fork
+
+1 Philosopher 45 has taken left fork
+
+1 Philosopher 45 has taken right fork
+
+1 Philosopher 45 is eating
+
+1 Philosopher 29 has taken right fork
+
+1 Philosopher 29 is eating
+
+1 Philosopher 39 has taken right fork
+
+1 Philosopher 35 is eating
+
+1 Philosopher 39 is eating
+
+1 Philosopher 33 has taken left fork
+
+1 Philosopher 33 has taken right fork
+
+1 Philosopher 33 is eating
+
+1 Philosopher 63 has taken left fork
+
+1 Philosopher 63 has taken right fork
+
+1 Philosopher 63 is eating
+
+1 Philosopher 25 has taken left fork
+
+1 Philosopher 25 has taken right fork
+
+1 Philosopher 25 is eating
+
+2 Philosopher 46 has taken left fork
+
+2 Philosopher 52 has taken left fork
+
+1 Philosopher 27 has taken right fork
+
+2 Philosopher 27 is eating
+
+2 Philosopher 52 has taken right fork
+
+2 Philosopher 52 is eating
+
+2 Philosopher 41 has taken left fork
+
+2 Philosopher 84 has taken left fork
+
+2 Philosopher 77 has taken left fork
+
+2 Philosopher 84 has taken right fork
+
+2 Philosopher 77 has taken right fork
+
+2 Philosopher 84 is eating
+
+2 Philosopher 77 is eating
+
+2 Philosopher 49 has taken left fork
+
+2 Philosopher 47 has taken left fork
+
+2 Philosopher 55 has taken left fork
+
+2 Philosopher 55 has taken right fork
+
+2 Philosopher 55 is eating
+
+2 Philosopher 61 has taken left fork
+
+2 Philosopher 61 has taken right fork
+
+2 Philosopher 61 is eating
+
+2 Philosopher 53 has taken left fork
+
+2 Philosopher 71 has taken left fork
+
+2 Philosopher 71 has taken right fork
+
+2 Philosopher 71 is eating
+
+2 Philosopher 49 has taken right fork
+
+2 Philosopher 69 has taken left fork
+
+2 Philosopher 49 is eating
+
+2 Philosopher 79 has taken left fork
+
+2 Philosopher 79 has taken right fork
+
+2 Philosopher 79 is eating
+
+2 Philosopher 69 has taken right fork
+
+2 Philosopher 69 is eating
+
+2 Philosopher 57 has taken left fork
+
+2 Philosopher 57 has taken right fork
+
+2 Philosopher 57 is eating
+
+2 Philosopher 59 has taken left fork
+
+2 Philosopher 59 has taken right fork
+
+2 Philosopher 59 is eating
+
+2 Philosopher 127 has taken left fork
+
+2 Philosopher 127 has taken right fork
+
+2 Philosopher 127 is eating
+
+2 Philosopher 81 has taken left fork
+
+2 Philosopher 81 has taken right fork
+
+2 Philosopher 81 is eating
+
+2 Philosopher 129 has taken left fork
+
+2 Philosopher 129 has taken right fork
+
+2 Philosopher 129 is eating
+
+2 Philosopher 131 has taken left fork
+
+2 Philosopher 131 has taken right fork
+
+2 Philosopher 131 is eating
+
+2 Philosopher 133 has taken left fork
+
+2 Philosopher 133 has taken right fork
+
+2 Philosopher 133 is eating
+
+2 Philosopher 65 has taken left fork
+
+2 Philosopher 65 has taken right fork
+
+2 Philosopher 65 is eating
+
+3 Philosopher 140 has taken left fork
+
+3 Philosopher 82 has taken left fork
+
+3 Philosopher 85 has taken left fork
+
+3 Philosopher 23 has taken left fork
+
+3 Philosopher 23 has taken right fork
+
+3 Philosopher 23 is eating
+
+3 Philosopher 189 has taken left fork
+
+3 Philosopher 189 has taken right fork
+
+3 Philosopher 189 is eating
+
+4 Philosopher 94 has taken left fork
+
+4 Philosopher 100 has taken left fork
+
+4 Philosopher 86 has taken left fork
+
+4 Philosopher 191 has taken left fork
+
+4 Philosopher 136 has taken left fork
+
+4 Philosopher 125 has taken left fork
+
+4 Philosopher 87 has taken left fork
+
+4 Philosopher 125 has taken right fork
+
+4 Philosopher 125 is eating
+
+3 Philosopher 152 has taken left fork
+
+4 Philosopher 103 has taken left fork
+
+4 Philosopher 152 has taken right fork
+
+4 Philosopher 152 is eating
+
+4 Philosopher 103 has taken right fork
+
+4 Philosopher 103 is eating
+
+4 Philosopher 182 has taken left fork
+
+4 Philosopher 182 has taken right fork
+
+4 Philosopher 182 is eating
+
+4 Philosopher 89 has taken left fork
+
+4 Philosopher 89 has taken right fork
+
+4 Philosopher 89 is eating
+Table control enters in the join
+
+4 Philosopher 193 has taken left fork
+
+4 Philosopher 193 has taken right fork
+
+4 Philosopher 193 is eating
+
+4 Philosopher 195 has taken left fork
+
+4 Philosopher 195 has taken right fork
+
+4 Philosopher 195 is eating
+
+4 Philosopher 137 has taken left fork
+
+4 Philosopher 153 has taken left fork
+
+5 Philosopher 92 has taken left fork
+
+5 Philosopher 138 has taken left fork
+
+5 Philosopher 142 has taken left fork
+
+5 Philosopher 154 has taken left fork
+
+2 Philosopher 37 has taken left fork
+
+5 Philosopher 109 has taken left fork
+
+5 Philosopher 36 has taken left fork
+
+5 Philosopher 109 has taken right fork
+
+5 Philosopher 109 is eating
+
+3 Philosopher 141 has taken left fork
+
+5 Philosopher 143 has taken left fork
+
+5 Philosopher 155 has taken left fork
+
+3 Philosopher 21 has taken left fork
+
+5 Philosopher 101 has taken left fork
+
+5 Philosopher 21 has taken right fork
+
+5 Philosopher 67 has taken left fork
+
+3 Philosopher 93 has taken left fork
+
+4 Philosopher 134 has taken left fork
+
+3 Philosopher 99 has taken left fork
+
+5 Philosopher 196 has taken left fork
+
+4 Philosopher 190 has taken left fork
+
+5 Philosopher 197 has taken left fork
+
+3 Philosopher 73 has taken left fork
+
+5 Philosopher 105 has taken left fork
+
+5 Philosopher 105 has taken right fork
+
+5 Philosopher 105 is eating
+
+3 Philosopher 149 has taken left fork
+
+5 Philosopher 149 has taken right fork
+
+5 Philosopher 21 is eating
+
+5 Philosopher 149 is eating
+
+5 Philosopher 150 has taken left fork
+
+3 Philosopher 140 has taken right fork
+
+5 Philosopher 140 is eating
+
+5 Philosopher 165 has taken left fork
+
+5 Philosopher 165 has taken right fork
+
+5 Philosopher 165 is eating
+
+5 Philosopher 170 has taken left fork
+
+5 Philosopher 170 has taken right fork
+
+5 Philosopher 170 is eating
+
+5 Philosopher 167 has taken left fork
+
+5 Philosopher 167 has taken right fork
+
+5 Philosopher 167 is eating
+
+5 Philosopher 171 has taken left fork
+
+5 Philosopher 106 has taken left fork
+
+4 Philosopher 168 has taken left fork
+
+5 Philosopher 117 has taken left fork
+
+5 Philosopher 117 has taken right fork
+
+5 Philosopher 117 is eating
+
+5 Philosopher 147 has taken left fork
+
+5 Philosopher 147 has taken right fork
+
+5 Philosopher 147 is eating
+
+5 Philosopher 97 has taken left fork
+
+5 Philosopher 97 has taken right fork
+
+5 Philosopher 97 is eating
+
+4 Philosopher 95 has taken left fork
+
+5 Philosopher 163 has taken left fork
+
+5 Philosopher 163 has taken right fork
+
+5 Philosopher 163 is eating
+
+6 Philosopher 156 has taken left fork
+
+6 Philosopher 158 has taken left fork
+
+6 Philosopher 118 has taken left fork
+
+6 Philosopher 161 has taken left fork
+
+6 Philosopher 158 has taken right fork
+
+6 Philosopher 161 has taken right fork
+
+7 Philosopher 123 has taken left fork
+
+7 Philosopher 161 is eating
+
+3 Philosopher 91 has taken left fork
+
+6 Philosopher 119 has taken left fork
+
+7 Philosopher 113 has taken left fork
+
+7 Philosopher 113 has taken right fork
+
+7 Philosopher 113 is eating
+
+6 Philosopher 158 is eating
+
+6 Philosopher 198 has taken left fork
+
+2 Philosopher 40 has taken left fork
+
+6 Philosopher 121 has taken left fork
+
+6 Philosopher 175 has taken left fork
+
+6 Philosopher 50 has taken left fork
+
+7 Philosopher 175 has taken right fork
+
+7 Philosopher 175 is eating
+
+6 Philosopher 159 has taken left fork
+
+6 Philosopher 111 has taken left fork
+
+7 Philosopher 187 has taken left fork
+
+7 Philosopher 187 has taken right fork
+
+7 Philosopher 187 is eating
+
+6 Philosopher 173 has taken left fork
+
+7 Philosopher 173 has taken right fork
+
+7 Philosopher 173 is eating
+
+7 Philosopher 180 has taken left fork
+
+7 Philosopher 120 has taken left fork
+
+7 Philosopher 177 has taken left fork
+
+3 Philosopher 90 has taken left fork
+
+7 Philosopher 144 has taken left fork
+
+7 Philosopher 115 has taken left fork
+
+7 Philosopher 115 has taken right fork
+
+7 Philosopher 115 is eating
+
+3 Philosopher 66 has taken left fork
+
+7 Philosopher 145 has taken left fork
+
+7 Philosopher 176 has taken left fork
+
+6 Philosopher 110 has taken left fork
+
+3 Philosopher 72 has taken left fork
+
+7 Philosopher 185 has taken left fork
+
+7 Philosopher 185 has taken right fork
+
+7 Philosopher 185 is eating
+
+3 Philosopher 98 has taken left fork
+
+6 Philosopher 75 has taken left fork
+
+6 Philosopher 107 has taken left fork
+
+8 Philosopher 183 has taken left fork
+
+3 Philosopher 179 has taken left fork
+
+4 Philosopher 136 has taken right fork
+
+8 Philosopher 136 is eating
+
+7 Philosopher 122 has taken left fork
+
+8 Philosopher 178 has taken left fork
+
+7 Philosopher 74 has taken left fork
+
+200 Philosopher 1 is sleeping
+
+200 Philosopher 11 is sleeping
+
+200 Philosopher 199 has taken left fork
+
+200 Philosopher 9 is sleeping
+
+200 Philosopher 12 has taken left fork
+
+200 Philosopher 14 has taken left fork
+
+200 Philosopher 12 has taken right fork
+
+200 Philosopher 5 is sleeping
+
+200 Philosopher 13 is sleeping
+
+200 Philosopher 3 is sleeping
+
+200 Philosopher 14 has taken right fork
+
+200 Philosopher 19 is sleeping
+
+200 Philosopher 4 has taken left fork
+
+200 Philosopher 4 has taken right fork
+
+200 Philosopher 4 is eating
+
+200 Philosopher 15 is sleeping
+
+200 Philosopher 12 is eating
+
+200 Philosopher 2 has taken left fork
+
+200 Philosopher 16 has taken left fork
+
+200 Philosopher 7 is sleeping
+
+200 Philosopher 16 has taken right fork
+
+200 Philosopher 16 is eating
+
+200 Philosopher 2 has taken right fork
+
+200 Philosopher 2 is eating
+
+200 Philosopher 17 is sleeping
+
+200 Philosopher 6 has taken left fork
+
+200 Philosopher 6 has taken right fork
+
+200 Philosopher 10 has taken left fork
+
+200 Philosopher 6 is eating
+
+200 Philosopher 18 has taken left fork
+
+200 Philosopher 10 has taken right fork
+
+200 Philosopher 18 has taken right fork
+
+200 Philosopher 10 is eating
+
+200 Philosopher 18 is eating
+
+200 Philosopher 8 has taken left fork
+
+200 Philosopher 8 has taken right fork
+
+200 Philosopher 8 is eating
+
+200 Philosopher 14 is eating
+
+201 Philosopher 33 is sleeping
+
+201 Philosopher 29 is sleeping
+
+201 Philosopher 43 is sleeping
+
+201 Philosopher 25 is sleeping
+
+201 Philosopher 39 is sleeping
+
+201 Philosopher 62 has taken left fork
+
+201 Philosopher 35 is sleeping
+
+201 Philosopher 63 is sleeping
+
+201 Philosopher 46 has taken right fork
+
+201 Philosopher 24 has taken left fork
+
+201 Philosopher 45 is sleeping
+
+201 Philosopher 31 is sleeping
+
+201 Philosopher 44 has taken left fork
+
+201 Philosopher 32 has taken left fork
+
+201 Philosopher 42 has taken left fork
+
+201 Philosopher 44 has taken right fork
+
+201 Philosopher 32 has taken right fork
+
+201 Philosopher 44 is eating
+
+201 Philosopher 32 is eating
+
+201 Philosopher 40 has taken right fork
+
+201 Philosopher 28 has taken left fork
+
+201 Philosopher 36 has taken right fork
+
+201 Philosopher 36 is eating
+
+201 Philosopher 30 has taken left fork
+
+201 Philosopher 40 is eating
+
+201 Philosopher 46 is eating
+
+201 Philosopher 30 has taken right fork
+
+201 Philosopher 30 is eating
+
+201 Philosopher 34 has taken left fork
+
+201 Philosopher 34 has taken right fork
+
+201 Philosopher 34 is eating
+
+201 Philosopher 38 has taken left fork
+
+202 Philosopher 61 is sleeping
+
+202 Philosopher 129 is sleeping
+
+202 Philosopher 127 is sleeping
+
+202 Philosopher 133 is sleeping
+
+202 Philosopher 81 is sleeping
+
+202 Philosopher 66 has taken right fork
+
+202 Philosopher 71 is sleeping
+
+202 Philosopher 76 has taken left fork
+
+202 Philosopher 84 is sleeping
+
+202 Philosopher 83 has taken left fork
+
+202 Philosopher 72 has taken right fork
+
+202 Philosopher 72 is eating
+
+202 Philosopher 66 is eating
+
+202 Philosopher 78 has taken left fork
+
+202 Philosopher 126 has taken left fork
+
+202 Philosopher 28 has taken right fork
+
+202 Philosopher 78 has taken right fork
+
+202 Philosopher 62 has taken right fork
+
+202 Philosopher 28 is eating
+
+202 Philosopher 78 is eating
+
+202 Philosopher 59 is sleeping
+
+202 Philosopher 49 is sleeping
+
+202 Philosopher 80 has taken left fork
+
+202 Philosopher 80 has taken right fork
+
+202 Philosopher 80 is eating
+
+202 Philosopher 50 has taken right fork
+
+202 Philosopher 128 has taken left fork
+
+202 Philosopher 68 has taken left fork
+
+202 Philosopher 128 has taken right fork
+
+202 Philosopher 128 is eating
+
+202 Philosopher 26 has taken left fork
+
+202 Philosopher 132 has taken left fork
+
+202 Philosopher 52 is sleeping
+
+202 Philosopher 60 has taken left fork
+
+202 Philosopher 60 has taken right fork
+
+202 Philosopher 51 has taken left fork
+
+202 Philosopher 53 has taken right fork
+
+202 Philosopher 82 has taken right fork
+
+202 Philosopher 53 is eating
+
+202 Philosopher 58 has taken left fork
+
+202 Philosopher 82 is eating
+
+202 Philosopher 26 has taken right fork
+
+202 Philosopher 58 has taken right fork
+
+202 Philosopher 57 is sleeping
+
+202 Philosopher 26 is eating
+
+202 Philosopher 55 is sleeping
+
+202 Philosopher 79 is sleeping
+
+202 Philosopher 85 has taken right fork
+
+202 Philosopher 65 is sleeping
+
+202 Philosopher 69 is sleeping
+
+202 Philosopher 48 has taken left fork
+
+202 Philosopher 62 is eating
+
+202 Philosopher 134 has taken right fork
+
+202 Philosopher 54 has taken left fork
+
+202 Philosopher 134 is eating
+
+202 Philosopher 27 is sleeping
+
+202 Philosopher 60 is eating
+
+202 Philosopher 131 is sleeping
+
+202 Philosopher 132 has taken right fork
+
+202 Philosopher 58 is eating
+
+202 Philosopher 77 is sleeping
+
+202 Philosopher 56 has taken left fork
+
+202 Philosopher 56 has taken right fork
+
+202 Philosopher 56 is eating
+
+202 Philosopher 70 has taken left fork
+
+202 Philosopher 85 is eating
+
+202 Philosopher 70 has taken right fork
+
+202 Philosopher 70 is eating
+
+202 Philosopher 50 is eating
+
+202 Philosopher 132 is eating
+
+202 Philosopher 130 has taken left fork
+
+202 Philosopher 130 has taken right fork
+
+202 Philosopher 130 is eating
+
+202 Philosopher 64 has taken left fork
+
+202 Philosopher 64 has taken right fork
+
+202 Philosopher 64 is eating
+
+203 Philosopher 23 is sleeping
+
+203 Philosopher 189 is sleeping
+
+203 Philosopher 24 has taken right fork
+
+203 Philosopher 24 is eating
+
+203 Philosopher 22 has taken left fork
+
+203 Philosopher 188 has taken left fork
+
+203 Philosopher 190 has taken right fork
+
+203 Philosopher 190 is eating
+
+204 Philosopher 103 is sleeping
+
+204 Philosopher 153 has taken right fork
+
+204 Philosopher 182 is sleeping
+
+204 Philosopher 152 is sleeping
+
+204 Philosopher 89 is sleeping
+
+204 Philosopher 124 has taken left fork
+
+204 Philosopher 183 has taken right fork
+
+204 Philosopher 151 has taken left fork
+
+204 Philosopher 88 has taken left fork
+
+204 Philosopher 192 has taken left fork
+
+204 Philosopher 193 is sleeping
+
+204 Philosopher 181 has taken left fork
+
+204 Philosopher 125 is sleeping
+
+204 Philosopher 126 has taken right fork
+
+204 Philosopher 126 is eating
+
+204 Philosopher 183 is eating
+
+204 Philosopher 194 has taken left fork
+
+204 Philosopher 90 has taken right fork
+
+204 Philosopher 194 has taken right fork
+
+204 Philosopher 194 is eating
+
+204 Philosopher 90 is eating
+
+204 Philosopher 196 has taken right fork
+
+204 Philosopher 196 is eating
+
+204 Philosopher 195 is sleeping
+
+204 Philosopher 153 is eating
+
+204 Philosopher 102 has taken left fork
+
+205 Philosopher 147 is sleeping
+
+205 Philosopher 109 is sleeping
+
+205 Philosopher 21 is sleeping
+
+205 Philosopher 150 has taken right fork
+
+205 Philosopher 118 has taken right fork
+
+205 Philosopher 170 is sleeping
+
+205 Philosopher 22 has taken right fork
+
+205 Philosopher 165 is sleeping
+
+205 Philosopher 139 has taken left fork
+
+205 Philosopher 169 has taken left fork
+
+205 Philosopher 108 has taken left fork
+
+205 Philosopher 148 has taken left fork
+
+205 Philosopher 171 has taken right fork
+
+205 Philosopher 171 is eating
+
+205 Philosopher 98 has taken right fork
+
+205 Philosopher 167 is sleeping
+
+205 Philosopher 98 is eating
+
+205 Philosopher 104 has taken left fork
+
+205 Philosopher 104 has taken right fork
+
+205 Philosopher 104 is eating
+
+205 Philosopher 22 is eating
+
+205 Philosopher 148 has taken right fork
+
+205 Philosopher 148 is eating
+
+205 Philosopher 149 is sleeping
+
+205 Philosopher 118 is eating
+
+205 Philosopher 20 has taken left fork
+
+205 Philosopher 20 has taken right fork
+
+205 Philosopher 20 is eating
+
+205 Philosopher 162 has taken left fork
+
+205 Philosopher 105 is sleeping
+
+205 Philosopher 96 has taken left fork
+
+205 Philosopher 166 has taken left fork
+
+205 Philosopher 166 has taken right fork
+
+205 Philosopher 166 is eating
+
+205 Philosopher 106 has taken right fork
+
+205 Philosopher 106 is eating
+
+205 Philosopher 97 is sleeping
+
+205 Philosopher 110 has taken right fork
+
+205 Philosopher 110 is eating
+
+205 Philosopher 116 has taken left fork
+
+205 Philosopher 168 has taken right fork
+
+205 Philosopher 168 is eating
+
+205 Philosopher 163 is sleeping
+
+205 Philosopher 140 is sleeping
+
+205 Philosopher 141 has taken right fork
+
+205 Philosopher 141 is eating
+
+205 Philosopher 164 has taken left fork
+
+205 Philosopher 164 has taken right fork
+
+205 Philosopher 164 is eating
+
+205 Philosopher 117 is sleeping
+
+205 Philosopher 150 is eating
+
+205 Philosopher 146 has taken left fork
+
+207 Philosopher 185 is sleeping
+
+207 Philosopher 161 is sleeping
+
+207 Philosopher 176 has taken right fork
+
+207 Philosopher 115 is sleeping
+
+207 Philosopher 160 has taken left fork
+
+207 Philosopher 176 is eating
+
+207 Philosopher 173 is sleeping
+
+207 Philosopher 175 is sleeping
+
+207 Philosopher 113 is sleeping
+
+207 Philosopher 186 has taken left fork
+
+207 Philosopher 186 has taken right fork
+
+207 Philosopher 186 is eating
+
+207 Philosopher 172 has taken left fork
+
+207 Philosopher 158 is sleeping
+
+207 Philosopher 184 has taken left fork
+
+207 Philosopher 162 has taken right fork
+
+207 Philosopher 157 has taken left fork
+
+207 Philosopher 159 has taken right fork
+
+207 Philosopher 162 is eating
+
+207 Philosopher 159 is eating
+
+207 Philosopher 112 has taken left fork
+
+207 Philosopher 174 has taken left fork
+
+207 Philosopher 188 has taken right fork
+
+207 Philosopher 116 has taken right fork
+
+207 Philosopher 188 is eating
+
+207 Philosopher 116 is eating
+
+207 Philosopher 174 has taken right fork
+
+207 Philosopher 174 is eating
+
+207 Philosopher 114 has taken left fork
+
+207 Philosopher 114 has taken right fork
+
+207 Philosopher 114 is eating
+
+207 Philosopher 187 is sleeping
+
+208 Philosopher 136 is sleeping
+
+208 Philosopher 137 has taken right fork
+
+208 Philosopher 135 has taken left fork
+
+208 Philosopher 137 is eating
+
+300 Philosopher 13 is thinking
+
+300 Philosopher 19 is thinking
+
+300 Philosopher 9 is thinking
+
+300 Philosopher 11 is thinking
+
+300 Philosopher 7 is thinking
+
+300 Philosopher 3 is thinking
+
+300 Philosopher 1 is thinking
+
+301 Philosopher 39 is thinking
+
+301 Philosopher 29 is thinking
+
+300 Philosopher 5 is thinking
+
+301 Philosopher 31 is thinking
+
+301 Philosopher 45 is thinking
+
+301 Philosopher 43 is thinking
+
+300 Philosopher 17 is thinking
+
+302 Philosopher 131 is thinking
+
+302 Philosopher 81 is thinking
+
+302 Philosopher 52 is thinking
+
+302 Philosopher 25 is thinking
+
+302 Philosopher 71 is thinking
+
+302 Philosopher 35 is thinking
+
+302 Philosopher 133 is thinking
+
+302 Philosopher 84 is thinking
+
+302 Philosopher 69 is thinking
+
+300 Philosopher 15 is thinking
+
+303 Philosopher 63 is thinking
+
+303 Philosopher 59 is thinking
+
+303 Philosopher 79 is thinking
+
+303 Philosopher 33 is thinking
+
+303 Philosopher 23 is thinking
+
+303 Philosopher 129 is thinking
+
+304 Philosopher 152 is thinking
+
+304 Philosopher 195 is thinking
+
+304 Philosopher 193 is thinking
+
+304 Philosopher 65 is thinking
+
+304 Philosopher 27 is thinking
+
+305 Philosopher 163 is thinking
+
+304 Philosopher 125 is thinking
+
+305 Philosopher 149 is thinking
+
+302 Philosopher 55 is thinking
+
+304 Philosopher 57 is thinking
+
+304 Philosopher 89 is thinking
+
+304 Philosopher 49 is thinking
+
+304 Philosopher 127 is thinking
+
+304 Philosopher 182 is thinking
+
+305 Philosopher 165 is thinking
+
+305 Philosopher 170 is thinking
+
+305 Philosopher 97 is thinking
+
+305 Philosopher 21 is thinking
+
+305 Philosopher 117 is thinking
+
+305 Philosopher 140 is thinking
+
+305 Philosopher 77 is thinking
+
+305 Philosopher 189 is thinking
+
+305 Philosopher 167 is thinking
+
+307 Philosopher 185 is thinking
+
+307 Philosopher 158 is thinking
+
+307 Philosopher 173 is thinking
+
+307 Philosopher 175 is thinking
+
+304 Philosopher 103 is thinking
+
+307 Philosopher 113 is thinking
+
+305 Philosopher 109 is thinking
+
+305 Philosopher 147 is thinking
+
+305 Philosopher 61 is thinking
+
+305 Philosopher 105 is thinking
+
+307 Philosopher 115 is thinking
+
+307 Philosopher 187 is thinking
+
+308 Philosopher 136 is thinking
+
+308 Philosopher 161 is thinking
+
+400 Philosopher 10 is sleeping
+
+400 Philosopher 16 is sleeping
+
+400 Philosopher 17 has taken left fork
+
+400 Philosopher 18 is sleeping
+
+400 Philosopher 12 is sleeping
+
+400 Philosopher 15 has taken left fork
+
+400 Philosopher 9 has taken left fork
+
+400 Philosopher 5 has taken left fork
+
+400 Philosopher 15 has taken right fork
+
+400 Philosopher 6 is sleeping
+
+400 Philosopher 5 has taken right fork
+
+400 Philosopher 17 has taken right fork
+
+400 Philosopher 3 has taken left fork
+
+400 Philosopher 5 is eating
+
+400 Philosopher 17 is eating
+
+400 Philosopher 3 has taken right fork
+
+400 Philosopher 14 is sleeping
+
+400 Philosopher 15 is eating
+
+400 Philosopher 2 is sleeping
+
+400 Philosopher 7 has taken left fork
+
+400 Philosopher 4 is sleeping
+
+400 Philosopher 3 is eating
+
+400 Philosopher 9 has taken right fork
+
+400 Philosopher 9 is eating
+
+400 Philosopher 13 has taken left fork
+
+400 Philosopher 1 has taken left fork
+
+400 Philosopher 11 has taken left fork
+
+400 Philosopher 11 has taken right fork
+
+400 Philosopher 13 has taken right fork
+
+400 Philosopher 11 is eating
+
+400 Philosopher 13 is eating
+
+400 Philosopher 7 has taken right fork
+
+400 Philosopher 7 is eating
+
+400 Philosopher 8 is sleeping
+
+401 Philosopher 30 is sleeping
+
+401 Philosopher 34 is sleeping
+
+401 Philosopher 44 is sleeping
+
+401 Philosopher 32 is sleeping
+
+401 Philosopher 39 has taken left fork
+
+401 Philosopher 45 has taken left fork
+
+401 Philosopher 45 has taken right fork
+
+401 Philosopher 45 is eating
+
+401 Philosopher 33 has taken left fork
+
+401 Philosopher 41 has taken right fork
+
+401 Philosopher 29 has taken left fork
+
+401 Philosopher 41 is eating
+
+401 Philosopher 37 has taken right fork
+
+401 Philosopher 40 is sleeping
+
+401 Philosopher 36 is sleeping
+
+401 Philosopher 35 has taken left fork
+
+401 Philosopher 33 has taken right fork
+
+401 Philosopher 47 has taken right fork
+
+401 Philosopher 46 is sleeping
+
+401 Philosopher 47 is eating
+
+401 Philosopher 31 has taken left fork
+
+401 Philosopher 37 is eating
+
+401 Philosopher 43 has taken left fork
+
+401 Philosopher 35 has taken right fork
+
+401 Philosopher 33 is eating
+
+401 Philosopher 31 has taken right fork
+
+401 Philosopher 31 is eating
+
+401 Philosopher 35 is eating
+
+402 Philosopher 28 is sleeping
+
+402 Philosopher 64 is sleeping
+
+402 Philosopher 130 is sleeping
+
+402 Philosopher 50 is sleeping
+
+402 Philosopher 26 is sleeping
+
+402 Philosopher 67 has taken right fork
+
+402 Philosopher 29 has taken right fork
+
+402 Philosopher 66 is sleeping
+
+402 Philosopher 56 is sleeping
+
+402 Philosopher 49 has taken left fork
+
+402 Philosopher 65 has taken left fork
+
+402 Philosopher 128 is sleeping
+
+402 Philosopher 72 is sleeping
+
+402 Philosopher 65 has taken right fork
+
+402 Philosopher 134 is sleeping
+
+402 Philosopher 29 is eating
+
+402 Philosopher 78 is sleeping
+
+402 Philosopher 59 has taken left fork
+
+402 Philosopher 53 is sleeping
+
+402 Philosopher 129 has taken left fork
+
+402 Philosopher 70 is sleeping
+
+402 Philosopher 63 has taken left fork
+
+402 Philosopher 129 has taken right fork
+
+402 Philosopher 73 has taken right fork
+
+402 Philosoph

@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 10:33:32 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/07 10:23:16 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/08 10:49:38 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,23 @@ int ft_atoi(const char *str)
 		i++;
 	}
 	return (res);
+}
+
+int	ft_strcmp(const char *str1, const char *str2)
+{
+	int		r;
+	int		i;
+
+	r = 0;
+	i = 0;
+	while ((str1[i] != '\0' || str2[i] != '\0'))
+	{
+		if (str1[i] != str2[i])
+		{
+			r = (unsigned char) str1[i] - (unsigned char) str2[i];
+			return (r);
+		}
+		i++;
+	}
+	return (r);
 }

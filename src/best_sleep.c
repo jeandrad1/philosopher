@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 14:42:16 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/03 13:39:05 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/08 10:43:29 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,22 @@
 
 void *better_sleep(long time)
 {
-    long start;
-    long end;
+	long	sleep_start;
+	long	elapsed;
 
-    start = time_milliseconds();
-    end = (start + time) * 1000;
-    while (time_milliseconds() < (end / 1000))
-        usleep(1000);
-    return (NULL);
+	sleep_start = time_milliseconds() * 1000;
+	while ((time_milliseconds() * 1000) - sleep_start < time)
+	{
+		//if (check_finish_dinner(table))
+		//	return (1);
+		elapsed = time - ((time_milliseconds() * 1000) - sleep_start);
+		if (elapsed > 1000)
+			usleep(500);
+		else
+		{
+			while ((time_milliseconds() * 1000) - sleep_start < time)
+				;
+		}
+	}
+	return (0);
 }

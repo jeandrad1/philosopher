@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 11:47:53 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/08 10:13:04 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/08 11:21:46 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void check_stop(t_table *table)
             pthread_mutex_lock(&table->is_dead);
             table->stop = true;
             pthread_mutex_unlock(&table->is_dead);
+            printf("%d entra y sale bien\n", table->philo[i].id);
             return ;
         }
         i++;
@@ -70,9 +71,13 @@ void	*control(void *arg)
 	{
 		check_stop(table);
         if (table->stop == true)
+        {
+            printf("Control thread ends 1\n");
             break ;
+        }
         usleep(1000);
 	}
+    printf("Control thread ends 2\n");
     pthread_mutex_unlock(&table->ready);
 	return (NULL);
 }
