@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 14:56:01 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/08 11:34:38 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/08 12:35:26 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,11 @@ bool dinner_ends(t_philo *philo, t_table *table)
     //pthread_mutex_lock(&table->print);
     //pthread_mutex_unlock(&table->print);
     pthread_join(table->control, NULL);
-    printf("Table control enters in the join\n");
     while (i < philo->table->philo_count)
     {
-        printf("Philosopher %d enters in the join\n", i);
         if (pthread_join(philo[i].thread, NULL) != 0)
             return (FAILURE);
         i++;
-        pthread_mutex_lock(&table->print);
-        printf("Philosopher %d did the join\n", i);
-        pthread_mutex_unlock(&table->print);
     }
-    printf("Dinner ends\n");
     return (SUCCESS);
 }
