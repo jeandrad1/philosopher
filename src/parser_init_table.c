@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 15:29:57 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/07 10:44:27 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/08 13:13:37 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ bool init_table(t_table *table, int argc, char **argv)
 	table->time_to_die = ft_atoi(argv[2]);
 	table->time_to_eat = ft_atoi(argv[3]);
 	table->time_to_sleep = ft_atoi(argv[4]);
-	table->eat_max = 0;
+	table->eat_max = -1;
 	table->stop = false;
 	if (argc == 6)
 		table->eat_max = ft_atoi(argv[5]);

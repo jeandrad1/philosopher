@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 14:35:09 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/08 11:35:31 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/08 13:09:16 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,6 @@ bool philo_takes_fork(t_philo *philo)
 
 bool philo_eat(t_philo *philo)
 {
-    //pthread_mutex_lock(&philo->table->eat);
     
     if(protected_death(philo))
     {
@@ -85,7 +84,6 @@ bool philo_eat(t_philo *philo)
     philo->last_eat = (time_milliseconds() - philo->table->start_time);
     philo->eat_count++;
     pthread_mutex_unlock(&philo->table->eat);
-    //pthread_mutex_unlock(&philo->table->eat);
     better_sleep(philo->table->time_to_eat * 1000);
     if (protected_death(philo))
     {
