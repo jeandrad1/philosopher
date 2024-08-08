@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 11:47:53 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/07 20:05:03 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/08 10:13:04 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,6 @@ void check_stop(t_table *table)
     {
         if (table->stop == true)
             return ;
-    
-
         if ((now - table->philo[i].last_eat) > table->time_to_die)
         {       
             protected_print(&table->philo[i], "died");
@@ -72,12 +70,7 @@ void	*control(void *arg)
 	{
 		check_stop(table);
         if (table->stop == true)
-        {
-            pthread_mutex_lock(&table->print);
-            printf("Philosopher ends the dinner\n");
-            pthread_mutex_unlock(&table->print);
             break ;
-        }
         usleep(1000);
 	}
     pthread_mutex_unlock(&table->ready);
