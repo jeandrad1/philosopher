@@ -2,3 +2,5 @@
 *.a
 .vscode/settings.json
 philo
+out.txt
+out.txt
