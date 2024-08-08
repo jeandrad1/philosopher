@@ -6,19 +6,11 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 14:56:01 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/08 12:35:26 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/08 12:38:34 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
-
-// static void stop_all_threads(t_table *table)
-// {
-//     pthread_mutex_lock(&table->is_dead);
-//     table->stop = true;
-//     pthread_mutex_unlock(&table->is_dead);
-// }
-
 
 // This functions ends the dinner
 // It joins the control thread and the philosopher threads
