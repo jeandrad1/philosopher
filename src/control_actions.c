@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 11:47:53 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/08 13:15:17 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/08 16:00:09 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void check_eat(t_table *table)
         if (has_eaten == table->philo_count)
         {
             pthread_mutex_lock(&table->print);
-            printf("All philosophers have eaten enough\n");
+            printf("\nAll philosophers have eaten enough\n");
             pthread_mutex_unlock(&table->print);
 
             pthread_mutex_lock(&table->is_dead);
@@ -47,7 +47,7 @@ void check_eat(t_table *table)
             pthread_mutex_unlock(&table->is_dead);
             break;
         }
-        usleep(1000);
+        better_sleep(1000);
     }
     table->stop = true;
 }
