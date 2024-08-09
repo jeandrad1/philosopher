@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 11:47:53 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/09 16:13:28 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/09 16:33:26 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,11 @@ void	*control(void *arg)
 	pthread_mutex_lock(&table->ready);
 	if (table->philo_count == 1)
 	{
-		check_eat(table);
+		better_sleep(table->time_to_die * 1000 + 1);
+		pthread_mutex_lock(&table->is_dead);
+		table->stop = true;
+		pthread_mutex_unlock(&table->is_dead);
+		protected_print(&table->philo[0], "died");
 		return (NULL);
 	}
 	while (1)

@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 14:35:09 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/09 15:40:26 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/09 16:33:09 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ bool	protected_print(t_philo *philo, char *str)
 	if (protected_death(philo) && ft_strcmp(str, "died") != 0)
 		return (false);
 	time = time_milliseconds() - philo->table->start_time;
-	if (protected_death(philo))
-		return (false);
 	pthread_mutex_lock(&philo->table->print);
 	if (protected_death(philo) && ft_strcmp(str, "died") != 0)
 	{
