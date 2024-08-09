@@ -6,7 +6,7 @@
 #    By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/27 13:23:39 by jeandrad          #+#    #+#              #
-#    Updated: 2024/08/07 10:15:46 by jeandrad         ###   ########.fr        #
+#    Updated: 2024/08/09 15:43:40 by jeandrad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ FILES =	philo\
 		best_sleep\
 		philo_utils\
 		control_actions\
+		death_and_free\
 
 # Source directory
 SRCS_DIR = ./src/

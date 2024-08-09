@@ -6,23 +6,11 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 14:35:09 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/09 15:34:46 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/09 15:40:26 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
-
-int	protected_death(t_philo *philo)
-{
-	pthread_mutex_lock(&philo->table->is_dead);
-	if (philo->table->stop == true)
-	{
-		pthread_mutex_unlock(&philo->table->is_dead);
-		return (1);
-	}
-	pthread_mutex_unlock(&philo->table->is_dead);
-	return (0);
-}
 
 bool	protected_print(t_philo *philo, char *str)
 {

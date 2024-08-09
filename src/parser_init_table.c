@@ -6,60 +6,84 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 15:29:57 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/09 15:38:20 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/09 16:05:07 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-// This function creates the mutexes for the forks, print, eat and ready
-// It also initializes the mutexes and checks if they were created correctly
-static bool	ft_mutex_create(t_table *table)
+//Destroy the mutexes if one fails to create
+static bool	ft_mutex_destroy(t_table *table)
 {
 	int	i;
 
 	i = 0;
+	while (i < table->philo_count)
+	{
+		if (&table->forks[i])
+			pthread_mutex_destroy(&table->forks[i]);
+		i++;
+	}
+	if (&table->print)
+		pthread_mutex_destroy(&table->print);
+	if (&table->is_dead)
+		pthread_mutex_destroy(&table->is_dead);
+	if (&table->eat)
+		pthread_mutex_destroy(&table->eat);
+	if (&table->ready)
+		pthread_mutex_destroy(&table->ready);
+	return (FAILURE);
+}
+
+static bool	ft_mutex_create_forks(t_table *table)
+{
+	int	i;
+	int	error;
+
+	i = 0;
+	error = 0;
 	table->forks = malloc(sizeof(pthread_mutex_t) * table->philo_count);
 	if (!table->forks)
-	{
-		printf("Error creating forks\n");
 		return (FAILURE);
-	}
-	if (pthread_mutex_init(&table->is_dead, NULL) != 0)
-	{
-		printf("Error creating dead\n");
-		return (FAILURE);
-	}
 	while (i < table->philo_count)
 	{
 		if (pthread_mutex_init(&table->forks[i], NULL) != 0)
-			printf("Error creating forks\n");
+		{
+			error = 1;
+			break ;
+		}
 		i++;
 	}
+	if (!table->forks)
+	{
+		error = 1;
+		return (FAILURE);
+	}
+	if (error == 1)
+		return (FAILURE);
+	return (SUCCESS);
+}
+
+// This function creates the mutexes for the forks, print, eat and ready
+// It also initializes the mutexes and checks if they were created correctly
+static bool	ft_mutex_create(t_table *table)
+{
+	int	error;
+
+	error = 0;
 	if (pthread_mutex_init(&table->print, NULL) != 0)
-	{
-		printf("Error creating print\n");
-		return (FAILURE);
-	}
+		error = 1;
 	if (pthread_mutex_init(&table->is_dead, NULL) != 0)
-	{
-		pthread_mutex_destroy(&table->print);
-		printf("Error creating dead\n");
-		return (FAILURE);
-	}
+		error = 1;
 	if (pthread_mutex_init(&table->eat, NULL) != 0)
-	{
-		pthread_mutex_destroy(&table->print);
-		pthread_mutex_destroy(&table->is_dead);
-		printf("Error creating eat\n");
-		return (FAILURE);
-	}
+		error = 1;
 	if (pthread_mutex_init(&table->ready, NULL) != 0)
+		error = 1;
+	if (!ft_mutex_create_forks(table) == FAILURE)
+		error = 1;
+	if (error == 1)
 	{
-		pthread_mutex_destroy(&table->print);
-		pthread_mutex_destroy(&table->is_dead);
-		pthread_mutex_destroy(&table->eat);
-		printf("Error creating ready\n");
+		ft_mutex_destroy(table);
 		return (FAILURE);
 	}
 	return (SUCCESS);
