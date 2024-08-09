@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 11:47:53 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/09 15:42:58 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/09 16:13:28 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,11 @@ void	*control(void *arg)
 
 	table = (t_table *)arg;
 	pthread_mutex_lock(&table->ready);
+	if (table->philo_count == 1)
+	{
+		check_eat(table);
+		return (NULL);
+	}
 	while (1)
 	{
 		check_eat(table);

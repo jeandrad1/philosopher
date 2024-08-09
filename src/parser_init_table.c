@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 15:29:57 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/09 16:05:07 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/09 16:26:59 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ static bool	ft_mutex_create(t_table *table)
 		error = 1;
 	if (pthread_mutex_init(&table->ready, NULL) != 0)
 		error = 1;
-	if (!ft_mutex_create_forks(table) == FAILURE)
+	if (ft_mutex_create_forks(table) == FAILURE)
 		error = 1;
 	if (error == 1)
 	{

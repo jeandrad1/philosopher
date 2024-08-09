@@ -6,11 +6,19 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 14:33:08 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/09 15:43:05 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/09 16:15:33 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
+
+static	bool one_philo(t_philo *philo)
+{
+	protected_print(philo, "has taken left fork");
+	while (protected_death(philo) == false)
+		;
+	return (false);
+}
 
 // This is the rutine of the philosophers
 // during the dinner and the condition to stop
@@ -19,6 +27,12 @@ static void	*philosopher_actions(void *arg)
 	t_philo	*philo;
 
 	philo = (t_philo *)arg;
+
+	if (philo->table->philo_count == 1)
+	{
+		one_philo(philo);
+		return (NULL);
+	}
 	if (philo->id % 2 == 0)
 		better_sleep(1000);
 	while (!protected_death(philo))
@@ -55,6 +69,7 @@ bool	create_philo_threads(t_philo *philo, t_table *table)
 	i = 0;
 	pthread_mutex_lock(&table->ready);
 	table->start_time = time_milliseconds();
+	printf("The are %d philosophers\n", table->philo_count);
 	while (i < table->philo_count)
 	{
 		if (!create_thread(&philo[i]))
