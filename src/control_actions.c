@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 11:47:53 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/09 13:13:06 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/09 13:15:25 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	*control(void *arg)
         {
             break ;
         }
-        usleep(1000);
+        better_sleep(100);
 	}
     pthread_mutex_unlock(&table->ready);
 	return (NULL);
