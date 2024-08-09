@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 14:33:08 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/09 13:16:39 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/09 15:27:30 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void *philosopher_actions(void *arg)
     t_philo *philo = (t_philo *)arg;
     
     if (philo->id % 2 == 0)
-        better_sleep(100); 
+        better_sleep(1000); 
     while (!protected_death(philo))
     {
         if (philo_takes_fork(philo) == false)
