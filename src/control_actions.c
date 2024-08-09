@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 11:47:53 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/08 19:38:57 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/09 13:13:06 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,13 @@ void check_eat(t_table *table)
 
     while ( i < table->philo_count && table->eat_max != -1)
     {
-        pthread_mutex_unlock(&table->is_dead);
-
 		if (table->philo[i].eat_count >= table->eat_max)
 			has_eaten++;
         i++;
         if (has_eaten == table->philo_count)
         {
             pthread_mutex_lock(&table->print);
-            printf("All philosophers have eaten enough\n");
+            printf("\n\nAll philosophers have eaten enough\n\n");
             pthread_mutex_unlock(&table->print);
 
             pthread_mutex_lock(&table->is_dead);
