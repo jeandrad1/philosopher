@@ -6,25 +6,11 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 10:33:32 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/08 10:49:38 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/09 15:38:54 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
-
-static void	*ft_memset(void *str, int c, size_t n)
-{
-	unsigned char	*s;
-
-	s = (unsigned char *) str;
-	while (n > 0)
-	{
-		*s = (unsigned char) c;
-		s++;
-		n--;
-	}
-	return (str);
-}
 
 void	*ft_calloc(size_t num, size_t size)
 {
@@ -37,17 +23,17 @@ void	*ft_calloc(size_t num, size_t size)
 		return (NULL);
 	if (ptr != NULL)
 	{
-		ft_memset(ptr, 0, total_size);
+		memset(ptr, 0, total_size);
 	}
 	return (ptr);
 }
 
 // This function converts a string to an integer 
 // Only allows positive numbers                  
-int ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-	int i;
-	int res;
+	int	i;
+	int	res;
 
 	i = 0;
 	res = 0;

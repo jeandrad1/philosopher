@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 15:29:57 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/08 19:39:19 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/09 15:38:20 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,16 @@
 // It also initializes the mutexes and checks if they were created correctly
 static bool	ft_mutex_create(t_table *table)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	table->forks = malloc(sizeof(pthread_mutex_t) * table->philo_count);
-	if(!table->forks)
+	if (!table->forks)
 	{
 		printf("Error creating forks\n");
 		return (FAILURE);
 	}
-	if(pthread_mutex_init(&table->is_dead,NULL) != 0)
+	if (pthread_mutex_init(&table->is_dead, NULL) != 0)
 	{
 		printf("Error creating dead\n");
 		return (FAILURE);
@@ -36,7 +36,6 @@ static bool	ft_mutex_create(t_table *table)
 			printf("Error creating forks\n");
 		i++;
 	}
-	
 	if (pthread_mutex_init(&table->print, NULL) != 0)
 	{
 		printf("Error creating print\n");
@@ -50,10 +49,10 @@ static bool	ft_mutex_create(t_table *table)
 	}
 	if (pthread_mutex_init(&table->eat, NULL) != 0)
 	{
-			pthread_mutex_destroy(&table->print);
-			pthread_mutex_destroy(&table->is_dead);
-			printf("Error creating eat\n");
-			return (FAILURE);
+		pthread_mutex_destroy(&table->print);
+		pthread_mutex_destroy(&table->is_dead);
+		printf("Error creating eat\n");
+		return (FAILURE);
 	}
 	if (pthread_mutex_init(&table->ready, NULL) != 0)
 	{
@@ -68,7 +67,7 @@ static bool	ft_mutex_create(t_table *table)
 
 // This function initializes the table
 // It assigns the values of the arguments to the table
-bool init_table(t_table *table, int argc, char **argv)
+bool	init_table(t_table *table, int argc, char **argv)
 {
 	table->philo_count = ft_atoi(argv[1]);
 	table->time_to_die = ft_atoi(argv[2]);
@@ -85,30 +84,29 @@ bool init_table(t_table *table, int argc, char **argv)
 
 // This function checks if the arguments are correct
 // It checks if the arguments are numbers and if they are positive
-bool    parse(int argc, char **argv)
+bool	parse(int argc, char **argv)
 {
-    int     i;
-    int     j;
-    char    *str;
+	int		i;
+	int		j;
+	char	*str;
 
-    i = 1;
-    j = 0;
-    if (argc < 5 || argc > 6)
-        return(FAILURE);
-    
-    while (i < argc)
-    {
+	i = 1;
+	j = 0;
+	if (argc < 5 || argc > 6)
+		return (FAILURE);
+	while (i < argc)
+	{
 		str = argv[i];
 		j = 0;
 		if (str[0] == '\0')
-			return(FAILURE);
-        while(str[j])
-        {
-            if (str[j] < '0' || str[j] > '9' || str[0] == '0')
-                return(FAILURE);
-            j++;
-        }
-        i++;
-    }
-    return (SUCCESS);
+			return (FAILURE);
+		while (str[j])
+		{
+			if (str[j] < '0' || str[j] > '9' || str[0] == '0')
+				return (FAILURE);
+			j++;
+		}
+		i++;
+	}
+	return (SUCCESS);
 }

@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 15:16:01 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/08 18:29:23 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/08/09 15:31:19 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ int	main(int argc, char *argv[])
 		return (EXIT_FAILURE);
 	if (!dinner_ends(table.philo, &table))
 		return (EXIT_FAILURE);
-	free(table.philo);
-	
+	ft_free(table.philo);
 	return (EXIT_SUCCESS);
 }

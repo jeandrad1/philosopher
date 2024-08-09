@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   time.c                                             :+:      :+:    :+:   */
+/*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/02 10:48:59 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/08/09 15:39:50 by jeandrad         ###   ########.fr       */
+/*   Created: 2024/08/09 15:31:33 by jeandrad          #+#    #+#             */
+/*   Updated: 2024/08/09 15:37:45 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-long	time_milliseconds(void)
+void	ft_free(t_table *table)
 {
-	struct timeval	tv;
-	long			time_ms;
-
-	gettimeofday(&tv, NULL);
-	time_ms = (tv.tv_sec) * 1000 + (tv.tv_usec) / 1000;
-	return (time_ms);
+	free(table->forks);
+	free(table->philo);
 }
